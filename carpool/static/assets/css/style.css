@@ -1,0 +1,24 @@
+.main-title{
+    margin-top: -100px;
+    
+}
+.main-heading{
+    font-size: 60px !important;
+}
+ @media screen and (max-width: 600px) {
+     .search-list{
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+     }
+     .main-heading{
+         font-size: 30px !important;
+         margin-top: 20px !important;
+     }
+     .search-box__container{
+         height: 550px;
+     }
+     
+
+     
+ }
