@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'carpooling.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'carpooling',
+        'NAME': 'dbcarpool',
         'USER': 'root',
         'PASSWORD': '',
         'HOST': 'localhost',
