@@ -1,4 +1,4 @@
-import messages as messages
+
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.core.files.storage import FileSystemStorage
@@ -21,9 +21,9 @@ class LoginView(TemplateView):
         username = request.POST['username']
         password = request.POST['password']
         user = authenticate(username=username,password=password)
-        # det = User.objects.get(id=1)
-        # det.last_name=1
-        # det.save()
+        det = User.objects.get(id=1)
+        det.last_name=1
+        det.save()
 
         if user is not None:
 
@@ -63,7 +63,7 @@ class Owner_Registration(TemplateView):
         files = fi.save(image.name, license)
         try:
             user = User.objects.create_user(username=username, password=password, email=email, first_name=fullname,
-                                             is_staff='0', last_name='1')
+                                             is_staff='0', last_name='0')
             user.save()
             Owner_Registration = OwnerEntry()
             Owner_Registration.user = user
@@ -102,7 +102,7 @@ class Passenger_Registration(TemplateView):
 
         try:
             user = User.objects.create_user(username=username, password=password, first_name=fullname, email=email,
-                                            last_name='1')
+                                            last_name='0')
             user.save()
             reg = PassengerEntry()
             reg.user = user

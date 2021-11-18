@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carpooling</title>
+    <!-- favicons Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png" />
+    <link rel="manifest" href="{% static 'assets/images/favicons/site.webmanifest' %}" />
+    <meta name="description" content="Entox HTML Template For Car Business" />
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com/">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap"
+        rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"/>
+<!--    <link rel="stylesheet" href="{% static 'assets/vendors/bootstrap/css/bootstrap.min.css' %}" />-->
+<!--    <link rel="stylesheet" href="{% static 'assets/vendors/animate/animate.min.css' %}" />-->
+<!--    <link rel="stylesheet" href="{% static 'assets/vendors/fontawesome/css/all.min.css' %}" />-->
+<!--    <link rel="stylesheet" href="{% static 'assets/vendors/jarallax/jarallax.css' %}" />-->
+<!--    <link rel="stylesheet" href="{% static 'assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css' %}" />-->
+<!--    <link rel="stylesheet" href="{% static 'assets/vendors/nouislider/nouislider.min.css' %}" />-->
+<!--    <link rel="stylesheet" href="{% static 'assets/vendors/nouislider/nouislider.pips.css' %}" />-->
+<!--    <link rel="stylesheet" href="{% static 'assets/vendors/odometer/odometer.min.css' %}" />-->
+<!--    <link rel="stylesheet" href="{% static 'assets/vendors/swiper/swiper.min.css' %}" />-->
+<!--    <link rel="stylesheet" href="{% static 'assets/vendors/entox-icons/style.css' %}">-->
+<!--    <link rel="stylesheet" href="{% static 'assets/vendors/tiny-slider/tiny-slider.min.css' %}" />-->
+<!--    <link rel="stylesheet" href="{% static 'assets/vendors/reey-font/stylesheet.css' %}" />-->
+<!--    <link rel="stylesheet" href="{% static 'assets/vendors/owl-carousel/owl.carousel.min.css' %}" />-->
+<!--    <link rel="stylesheet" href="{% static 'assets/vendors/owl-carousel/owl.theme.default.min.css' %}" />-->
+<!--    <link rel="stylesheet" href="{% static 'assets/vendors/twentytwenty/twentytwenty.css' %}" />-->
+<!--    <link rel="stylesheet" href="{% static 'assets/vendors/bxslider/jquery.bxslider.css' %}" />-->
+<!--    <link rel="stylesheet" href="{% static 'assets/vendors/bootstrap-select/css/bootstrap-select.min.css' %}" />-->
+<!--    <link rel="stylesheet" href="{% static 'assets/vendors/vegas/vegas.min.css' %}" />-->
+<!--    <link rel="stylesheet" href="{% static 'assets/vendors/jquery-ui/jquery-ui.css' %}" />-->
+<!--    <link rel="stylesheet" href="{% static 'assets/vendors/timepicker/timePicker.css' %}" />-->
+
+    <!-- template styles -->
+    <link rel="stylesheet" href="{% static 'assets/css/entox.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/entox-responsive.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/new.css' %}"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIge8SKUYjjhEEzG2yEtvgm4aG9a9aK50&libraries=places&callback=initMap">
+</script>
+  </head>
+  <body>
+    <div class="preloader">
+        <img class="preloader__image" width="60" src="assets/images/loader.png" alt="" />
+    </div>
+    <!-- /.preloader -->
+    <div class="page-wrapper">
+        <header class="main-header clearfix" style="background-color:#000;">
+
+            <nav class="main-menu clearfix">
+                <div class="main-menu-wrapper clearfix">
+                    <div class="main-menu-wrapper__left clearfix">
+                        <div class="main-menu-wrapper__logo">
+                            <a href="index-2.html"><img src="{% static 'assets/images/logogif.gif' %}" style="width:180px;height:80px;" alt=""></a>
+                        </div>
+                        <div class="main-menu-wrapper__main-menu">
+                            <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+                            <ul class="main-menu__list">
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="main-menu-wrapper__right d-flex justify-content-center align-items-center">
+
+                        <div class="main-menu-wrapper__btn-box">
+                            <a href="owner_reg" class="thm-btn main-menu-wrapper__btn">
+                                <div class="card-wrap">
+                                    <div class="card-info">
+                                        <span class="card-size">Ride Giver</span>
+                                         <span class="card-seat">Share Seats</span>
+                                    </div>
+                                    <img src="{% static 'assets/images/driver.jpg' %}" class="card-prof">
+                                </div>
+                            </a>
+
+                        </div>
+                        <div class="main-menu-wrapper__btn-box" style="margin-left:20px">
+                            <a href="passenger_register" class="thm-btn main-menu-wrapper__btn">
+                             <div class="card-wrap">
+                                    <div class="card-info">
+                                        <span class="card-size">Ride Taker</span>
+                                         <span class="card-seat">Looking for ride</span>
+                                    </div>
+                                    <img src="{% static 'assets/images/passenger.jpg' %}" class="card-prof">
+                                </div>
+                            </a>
+                        </div>
+                        <div class="main-menu-wrapper__btn-box" style="margin-left:20px">
+                            <a href="login" class="thm-btn main-menu-wrapper__btn login-custom">Login</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="stricky-header stricked-menu main-menu">
+            <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
+        </div>
+      <div class="container-fluid">
+            <div class="row">
+                <div id="carouselExampleControls"
+                  class="carousel slide"
+                  data-bs-ride="carousel"
+                >
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img
+                        src="{% static 'assets/images/bg1.jpg' %}"
+                        class="d-block w-100"
+                        alt="..."
+                      />
+                    </div>
+                    <div class="carousel-item">
+                      <img
+                        src="{% static 'assets/images/bg2.jpg' %}"
+                        class="d-block w-100"
+                        alt="..."
+                      />
+                    </div>
+                    <div class="carousel-item">
+                      <img
+                        src="{% static 'assets/images/bg3.jpg' %}"
+                        class="d-block w-100"
+                        alt="..."
+                      />
+                    </div>
+                  </div>
+                  <button
+                    class="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#carouselExampleControls"
+                    data-bs-slide="prev"
+                  >
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button
+                    class="carousel-control-next"
+                    type="button"
+                    data-bs-target="#carouselExampleControls"
+                    data-bs-slide="next"
+                  >
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
+              </div>
+        </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+      <section class="premium-ride">
+            <div class="container">
+                <div class="section-title text-center">
+                    <span class="section-title__tagline">Meet the Right Services</span>
+                </div>
+                <div class="row">
+                    <div class="col-xl-12">
+                        <ul class="list-unstyled premium-ride-box">
+                            <li class="premium-ride__single wow fadeInUp" data-wow-delay="100ms">
+                                <div class="premium-ride__img">
+                                    <img src="{% static 'assets/images/money.jpg' %}" alt="" style="width: 130px;">
+                                </div>
+                                <h3 class="premium-ride__title">Your pick of rides at low prices</h3>
+                                <p class="premium-ride__text">No matter where you’re going, by bus or carpool, find the perfect ride from our wide range of destinations and routes at low prices.</p>
+                            </li>
+                            <li class="premium-ride__single wow fadeInUp" data-wow-delay="200ms">
+                                <div class="premium-ride__img">
+                                    <img src="{% static 'assets/images/person.png' %}" alt="" style="width: 130px;">
+                                </div>
+                                <h3 class="premium-ride__title">Trust who you travel with</h3>
+                                <p class="premium-ride__text">We take the time to get to know each of our members and bus partners. We check reviews, profiles and IDs, so you know who you’re travelling with and can book your ride at ease on our secure platform.</p>
+                            </li>
+                            <li class="premium-ride__single wow fadeInUp" data-wow-delay="300ms">
+                                <div class="premium-ride__img">
+                                    <img src="{% static 'assets/images/ligning.jpg' %}" alt="" style="width: 130px;">
+                                </div>
+                                <h3 class="premium-ride__title">Scroll, click, tap and go!</h3>
+                                <p class="premium-ride__text">Booking a ride has never been easier! Thanks to our simple app powered by great technology, you can book a ride in just minutes.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+      <section class="featured-one">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-8">
+                        <div class="section-title text-left">
+                            <span class="section-title__tagline">People Love the Most</span>
+                            <h2 class="section-title__title">Most popular Rides</h2>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-4">
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6">
+                        <div class="featured-one__left wow fadeInLeft" data-wow-duration="1500ms">
+                            <div class="featured-one__left-img">
+                                <img src="{% static 'assets/images/resources/featured-one-img-1.jpg' %}" alt="">
+                                <div class="featured-one__left-img-content">
+                                    <h2 class="featured-one__left-img-title"><a href=""><span> Mangalapuram</span> <i class="bi bi-arrow-right"></i>
+                                        <span> Goa</span></a></h2>
+                                    <p class="featured-one__left-car-price"><span>₹3200</span> /per-ride</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6">
+                        <div class="row">
+                            <div class="col-xl-6 col-lg-6 col-md-6">
+                                <!--Featured One Single-->
+                                <div class="featured-one__single wow fadeInUp" data-wow-delay="100ms">
+                                    <div class="featured-one__img">
+                                        <img src="{% static 'assets/images/resources/featured-one-img-2.jpg' %}" alt="">
+                                        <div class="featured-one__img-content">
+                                            <h3 class="featured-one__img-content-title"><a
+                                                    href=""><span> Delhi</span> <i class="bi bi-arrow-right"></i>
+                                                    <span> Chennai</span></a></h3>
+                                            <p class="featured-one__img-content-car-price"><span>₹220</span> /per-ride</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6">
+                                <!--Featured One Single-->
+                                <div class="featured-one__single wow fadeInUp" data-wow-delay="200ms">
+                                    <div class="featured-one__img">
+                                        <img src="{% static 'assets/images/resources/featured-one-img-3.jpg' %}" alt="">
+                                        <div class="featured-one__img-content">
+                                            <h3 class="featured-one__img-content-title"><a
+                                                    href=""><span> Mumbai</span> <i class="bi bi-arrow-right"></i>
+                                                    <span> Kanyakumari</span></a></h3>
+                                            <p class="featured-one__img-content-car-price"><span>₹130</span> /per-ride</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6">
+                                <!--Featured One Single-->
+                                <div class="featured-one__single wow fadeInUp" data-wow-delay="300ms">
+                                    <div class="featured-one__img">
+                                        <img src="{% static 'assets/images/resources/featured-one-img-4.jpg' %}" alt="">
+                                        <div class="featured-one__img-content">
+                                            <h3 class="featured-one__img-content-title"><a
+                                                    href=""><span> Kochi</span> <i class="bi bi-arrow-right"></i>
+                                                    <span> Trivandrum</span></a></h3>
+                                            <p class="featured-one__img-content-car-price"><span>₹32</span> /per-ride</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6">
+                                <!--Featured One Single-->
+                                <div class="featured-one__single wow fadeInUp" data-wow-delay="400ms">
+                                    <div class="featured-one__img">
+                                        <img src="{% static 'assets/images/resources/featured-one-img-5.jpg' %}" alt="">
+                                        <div class="featured-one__img-content">
+                                            <h3 class="featured-one__img-content-title"><a
+                                                    href=""><span> Selam</span> <i class="bi bi-arrow-right"></i>
+                                                    <span> Mysore</span></a></h3>
+                                            <p class="featured-one__img-content-car-price"><span>₹230</span> /per-ride</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+      <footer class="site-footer">
+            <div class="site-footer-bg" style="background-image: url(assets/images/backgrounds/site-footer-bg.jpg)">
+            </div>
+            <div class="container">
+                <div class="site-footer__top">
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
+                            <div class="footer-widget__column footer-widget__about">
+                                <div class="footer-widget__about-logo">
+                                    <a href="index-2.html"><img src="{% static 'assets/images/carpoo,.jpg' %}" alt=""></a>
+                                </div>
+                                <p class="footer-widget__about-text">It is the leading carpooling app in the world. Forget going into the city to get out of town. We connect people together, making it possible to travel literally anywhere, directly.</p>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+        </footer>
+
+
+    </div>
+
+
+
+
+    </div>
+
+
+
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
+
+
+    <script src="{% static 'assets/vendors/jquery/jquery-3.5.1.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/jarallax/jarallax.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/jquery-appear/jquery.appear.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/jquery-circle-progress/jquery.circle-progress.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/jquery-validate/jquery.validate.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/nouislider/nouislider.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/odometer/odometer.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/swiper/swiper.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/tiny-slider/tiny-slider.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/wnumb/wNumb.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/wow/wow.js' %}"></script>
+    <script src="{% static 'assets/vendors/isotope/isotope.js' %}"></script>
+    <script src="{% static 'assets/vendors/countdown/countdown.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/owl-carousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/twentytwenty/twentytwenty.js' %}"></script>
+    <script src="{% static 'assets/vendors/twentytwenty/jquery.event.move.js' %}"></script>
+    <script src="{% static 'assets/vendors/bxslider/jquery.bxslider.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/bootstrap-select/js/bootstrap-select.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/vegas/vegas.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/jquery-ui/jquery-ui.js' %}"></script>
+    <script src="{% static 'assets/vendors/timepicker/timePicker.js' %}"></script>
+
+
+
+    <script src="http://maps.google.com/maps/api/js?key=AIzaSyATY4Rxc8jNvDpsK8ZetC7JyN4PFVYGCGM"></script>
+
+
+    <!-- template js -->
+    <script src="{% static 'assets/js/entox.js' %}"></script>
+    <script src="{% static 'assets/js/index.js' %}"></script>
+    <script>
+        var defaultBounds = new google.maps.LatLngBounds(
+  new google.maps.LatLng(-33.8902, 151.1759),
+  new google.maps.LatLng(-33.8474, 151.2631));
+
+var input = document.getElementById('searchTextField');
+
+var searchBox = new google.maps.places.SearchBox(input, {
+  bounds: defaultBounds
+});
+
+    </script>
+<script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"></script>
+</body>
+
+</html>

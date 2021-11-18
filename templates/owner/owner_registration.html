@@ -13,6 +13,7 @@
     <title>Registration</title>
 
     <!-- Icons font CSS-->
+    {% load static %}
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
     <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
     <!-- Font special for pages-->
@@ -23,29 +24,40 @@
     <link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
 
     <!-- Main CSS-->
-    {% load static %}
+    <link href="{% static 'assets/css/new.css' %}" rel="stylesheet" media="all">
     <link href="{% static 'assets/css/main.css' %}" rel="stylesheet" media="all">
 </head>
 
 <body>
-    <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
-        <div class="wrapper wrapper--w680">
-            <div class="card card-4">
-                <div class="card-body" style="margin-top: -50px;">
-                    <h2 class="title">Registration Form</h2>
+    <header class="main-header clearfix" style="background-color:#000;">
+
+            <nav class="">
+                <div class="">
+                    <ul style="height: 70px;background-color: white;list-style-type: none; overflow: hidden;">
+                        <li class="active" style="width: 70px;height: 40px;float: right;margin-right: 100px; "><a href="/" style="display: block;padding: 8px;background-color: cadetblue;color:white;margin-top: 15px;text-decoration: none;"> HOME </a></li>
+<!--                        <li style="width: 180px;height: 40px;float: right;margin-right: 30px; "><a href="" style="display: block;padding: 8px;background-color: cadetblue;color:white;margin-top: 15px;text-decoration: none;"> OWNER REGISTRATION </a></li>-->
+                    </ul>
+                </div>
+            </nav>
+        </header>
+    <div class="bg-gra-02 p-t-130 p-b-100 font-poppins" style="min-height: 0;height: 340px;">
+        <div class="wrapper wrapper--w680 bg-gra-02">
+            <div class="card card-4" style="margin-top: 250px;">
+                <div class="card-body" style="background-color: white;">
+                    <h2 class="title" style="color: black;text-align: center;">OWNER REGISTRATION FORM</h2>
                     <form method="post" enctype="multipart/form-data">
                         {% csrf_token %}
                         <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Full name</label>
-                                    <input class="input--style-4" type="text" name="name">
+                                    <input class="input--style-4"  required type="text" placeholder="Enter your Fullname" name="name">
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Username</label>
-                                    <input class="input--style-4" type="text" name="username">
+                                    <input class="input--style-4" required type="text" placeholder="Enter your Username" name="username">
                                 </div>
                             </div>
                         </div>
@@ -54,7 +66,7 @@
                                 <div class="input-group">
                                     <label class="label">DOB</label>
                                     <div class="input-group-icon">
-                                        <input class="input--style-4 js-datepicker" type="text" name="dob">
+                                        <input class="input--style-4 js-datepicker" placeholder="Enter your DOB"  required type="date" name="dob">
                                         <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
                                     </div>
                                 </div>
@@ -65,11 +77,11 @@
                                     <label class="label">Gender</label>
                                     <div class="p-t-10">
                                         <label class="radio-container m-r-45">Male
-                                            <input type="radio" checked="checked" name="gender">
+                                            <input type="radio"  value="male" name="gender">
                                             <span class="checkmark"></span>
                                         </label>
                                         <label class="radio-container">Female
-                                            <input type="radio" name="gender">
+                                            <input type="radio" value="female" name="gender">
                                             <span class="checkmark"></span>
                                         </label>
                                     </div>
@@ -80,31 +92,31 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Email</label>
-                                    <input class="input--style-4" type="email" name="email">
+                                    <input class="input--style-4" required type="email" placeholder="Enter your Email" name="email">
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Phone Number</label>
-                                    <input class="input--style-4" type="text" name="contact">
+                                    <input class="input--style-4"  required type="text" placeholder="Enter your Phone Number" name="contact">
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">License</label>
-                                    <input class="input--style-4" type="file" name="license">
+                                    <input class="input--style-4"  required type="file" name="license">
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Add Photo</label>
-                                    <input class="input--style-4" type="file" name="image">
+                                    <input class="input--style-4" required type="file" name="image">
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Password</label>
-                                    <input class="input--style-4" type="password" name="password">
+                                    <input class="input--style-4" required type="password" placeholder="Enter your Password" name="password">
                                 </div>
                             </div>
                         </div>

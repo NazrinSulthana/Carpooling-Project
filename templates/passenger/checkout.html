@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+{% load static %}
+<!-- saved from url=(0040)https://cdpn.io/paulborm/fullpage/xZWGGK -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  
+  
+<link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+<meta name="apple-mobile-web-app-title" content="CodePen">
+
+<link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+
+<link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+
+
+  <title>CodePen - #dailyui 002 - Credit Card Checkout</title>
+  <link rel="stylesheet" href="{% static 'assets/vendors/bootstrap/css/bootstrap.min.css' %}" />
+  <link rel="stylesheet" href="{% static 'assets/vendors/bootstrap/css/normalize.min.css' %}"/>
+
+  <link rel="stylesheet" href="{% static 'assets/vendors/bootstrap/css/font-awesome.min.css' %}"/>
+  
+<style>
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,300,500);
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Ubuntu", sans-serif;
+  padding-top: 50px;
+  background-color: #e9eef2;
+}
+
+input, select {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  text-transform: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  width: 350px;
+  margin: 0 auto;
+}
+.container--box {
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.2);
+}
+.container--caption {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.payment {
+  padding: 30px 30px 20px 30px;
+  background-color: #2048B7;
+}
+.payment__input {
+  width: 100%;
+  margin-bottom: 20px;
+  height: 30px;
+  padding-left: 10px;
+  border-radius: 5px;
+  font-weight: 300;
+}
+.payment__input[placeholder] {
+  font-size: 12px;
+  text-transform: uppercase;
+}
+.payment__input--half {
+  width: 45%;
+}
+.payment__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  height: 30px;
+}
+.payment__header__input {
+  flex-basis: 70%;
+  font-weight: 400;
+  background-color: #173483;
+  color: white;
+  font-size: 16px;
+}
+.payment__header__card-logo {
+  flex-basis: 20%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+.payment__body {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.cart-overview__product-list {
+  padding-right: 15px;
+}
+
+.product-list__item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.product-list__item__price {
+  font-size: 14px;
+  font-weight: 400;
+  align-self: flex-end;
+}
+
+.product-title {
+  position: relative;
+  font-size: 12px;
+  font-weight: 500;
+}
+.product-title__number {
+  position: absolute;
+  margin-left: 5px;
+  background-color: #2048B7;
+  border-radius: 100%;
+  width: 13px;
+  display: inline-block;
+  font-weight: 500;
+  font-size: 8px;
+  color: white;
+  line-height: 13px;
+  text-align: center;
+}
+
+.product-description {
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.cart-overview {
+  padding: 30px;
+  background-color: white;
+}
+.cart-overview__product-list {
+  max-height: 140px;
+  overflow-y: scroll;
+}
+.cart-overview__bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 30px;
+  margin-top: 30px;
+}
+.cart-overview__bottom__sum {
+  font-weight: 400;
+}
+
+.button {
+  display: block;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 0;
+  text-align: center;
+}
+.button--checkout {
+  width: 100%;
+  line-height: 100px;
+  background-color: #27D068;
+  color: white;
+  font-size: 30px;
+}
+
+.sk-fading-circle {
+  margin: 30px auto;
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+
+.sk-fading-circle .sk-circle {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.sk-fading-circle .sk-circle:before {
+  content: "";
+  display: block;
+  margin: 0 auto;
+  width: 15%;
+  height: 15%;
+  background-color: white;
+  border-radius: 100%;
+  -webkit-animation: sk-circleFadeDelay 1.2s infinite ease-in-out both;
+  animation: sk-circleFadeDelay 1.2s infinite ease-in-out both;
+}
+
+.sk-fading-circle .sk-circle2 {
+  transform: rotate(30deg);
+}
+
+.sk-fading-circle .sk-circle3 {
+  transform: rotate(60deg);
+}
+
+.sk-fading-circle .sk-circle4 {
+  transform: rotate(90deg);
+}
+
+.sk-fading-circle .sk-circle5 {
+  transform: rotate(120deg);
+}
+
+.sk-fading-circle .sk-circle6 {
+  transform: rotate(150deg);
+}
+
+.sk-fading-circle .sk-circle7 {
+  transform: rotate(180deg);
+}
+
+.sk-fading-circle .sk-circle8 {
+  transform: rotate(210deg);
+}
+
+.sk-fading-circle .sk-circle9 {
+  transform: rotate(240deg);
+}
+
+.sk-fading-circle .sk-circle10 {
+  transform: rotate(270deg);
+}
+
+.sk-fading-circle .sk-circle11 {
+  transform: rotate(300deg);
+}
+
+.sk-fading-circle .sk-circle12 {
+  transform: rotate(330deg);
+}
+
+.sk-fading-circle .sk-circle2:before {
+  -webkit-animation-delay: -1.1s;
+  animation-delay: -1.1s;
+}
+
+.sk-fading-circle .sk-circle3:before {
+  -webkit-animation-delay: -1s;
+  animation-delay: -1s;
+}
+
+.sk-fading-circle .sk-circle4:before {
+  -webkit-animation-delay: -0.9s;
+  animation-delay: -0.9s;
+}
+
+.sk-fading-circle .sk-circle5:before {
+  -webkit-animation-delay: -0.8s;
+  animation-delay: -0.8s;
+}
+
+.sk-fading-circle .sk-circle6:before {
+  -webkit-animation-delay: -0.7s;
+  animation-delay: -0.7s;
+}
+
+.sk-fading-circle .sk-circle7:before {
+  -webkit-animation-delay: -0.6s;
+  animation-delay: -0.6s;
+}
+
+.sk-fading-circle .sk-circle8:before {
+  -webkit-animation-delay: -0.5s;
+  animation-delay: -0.5s;
+}
+
+.sk-fading-circle .sk-circle9:before {
+  -webkit-animation-delay: -0.4s;
+  animation-delay: -0.4s;
+}
+
+.sk-fading-circle .sk-circle10:before {
+  -webkit-animation-delay: -0.3s;
+  animation-delay: -0.3s;
+}
+
+.sk-fading-circle .sk-circle11:before {
+  -webkit-animation-delay: -0.2s;
+  animation-delay: -0.2s;
+}
+
+.sk-fading-circle .sk-circle12:before {
+  -webkit-animation-delay: -0.1s;
+  animation-delay: -0.1s;
+}
+
+@-webkit-keyframes sk-circleFadeDelay {
+  0%, 39%, 100% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+}
+@keyframes sk-circleFadeDelay {
+  0%, 39%, 100% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+</head>
+
+<body translate="no" style="background-color:lightslategrey;">
+  <!-- Design Paul Borm : https://twitter.com/borm_paul/status/691218991457656833-->
+<div class="container container--box" style="height: 700px;">
+  <div class="payment" style="height: 300px;">
+    <div class="payment__header">
+      <select class="input payment__input payment__header__input payment__input">
+        <option>MasterCard</option>
+        <option>Visa</option>
+        <option>Discover</option>
+        <option>AmericanExpress</option>
+      </select>
+<!--      <div class="payment__header__card-logo"><img src="assets/images/1587604228-cp-80x80.png"></div>-->
+    </div>
+    <div class="payment__body">
+      <input class="input payment__input" type="text" placeholder="Name">
+      <input class="input payment__input" type="text" placeholder="Card number">
+      <input class="input payment__input payment__input--half" type="text" placeholder="Expiration Date">
+      <input class="input payment__input payment__input--half" type="text" placeholder="CVC">
+    </div>
+  </div>
+  <div class="cart-overview">
+    <div class="cart-overview__product-list" style="height:250px;">
+      <div class="product-list__item">
+        <div class="product-list__item__info">
+          <div class="product-title">Ride
+            <div class="product-description">Total </div>
+          </div>
+        </div>
+        <div class="product-list__item__price">240</div>
+      </div>
+      <div class="product-list__item">
+        <div class="product-list__item__info">
+          <div class="product-title">Additional<span class="product-title__number"></span>
+            <div class="product-description"> </div>
+          </div>
+        </div>
+        <div class="product-list__item__price">20</div>
+      </div>
+      <div class="product-list__item">
+        <div class="product-list__item__info">
+          <div class="product-title">Donation
+            <div class="product-description">for charity</div>
+          </div>
+        </div>
+        <div class="product-list__item__price">70</div>
+      </div>
+<!--      <div class="product-list__item">-->
+<!--        <div class="product-list__item__info">-->
+<!--          <div class="product-title">Nike Sportswear-->
+<!--            <div class="product-description">Sweatshirt - gris/blanc</div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="product-list__item__price">45,84€</div>-->
+<!--      </div>-->
+<!--    </div>-->
+    <div class="cart-overview__bottom">
+      <div class="cart-overview__bottom__symbol"><i class="fa fa-shopping-cart"></i></div>
+      <div class="cart-overview__bottom__sum">330/-</div>
+    </div>
+  </div>
+  <button class="button button--checkout"><i class="fa fa-check"></i></button>
+</div>
+<!--<div class="container container&#45;&#45;caption">DAILYUI 002 - Credit Card Checkout <br><a href="https://twitter.com/borm_paul/status/691218991457656833" target="_blank">@borm_paul</a></div>-->
+    <script src="{% static 'assets/vendors/jquery/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js.download' %}"></script>
+
+  <script src="{% static 'assets/vendors/jquery/jquery.min.js.download' %}"></script>
+      <script id="rendered-js">
+$(document).ready(function () {
+
+  $(".button--checkout").on("click", function () {
+    $(this).html('<div class="sk-fading-circle"><div class="sk-circle1 sk-circle"></div><div class="sk-circle2 sk-circle"></div><div class="sk-circle3 sk-circle"></div> <div class="sk-circle4 sk-circle"></div><div class="sk-circle5 sk-circle"></div><div class="sk-circle6 sk-circle"></div><div class="sk-circle7 sk-circle"></div><div class="sk-circle8 sk-circle"></div><div class="sk-circle9 sk-circle"></div><div class="sk-circle10 sk-circle"></div><div class="sk-circle11 sk-circle"></div> <div class="sk-circle12 sk-circle"></div></div>');
+
+    setTimeout(function () {
+      $(".button--checkout").html('<i class="fa fa-check"></i>');
+    }, 1500);
+  });
+
+});
+//# sourceURL=pen.js
+    </script>
+
+  
+
+
+
+
+ 
+</body></html>

@@ -121,7 +121,10 @@
      #PAGE WRAPPER
      ========================================================================== */
   .page-wrapper {
-    min-height: 100vh;
+    background-image: url( ../images/carpool.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
   }
   
   body {
@@ -162,7 +165,7 @@
      #BACKGROUND
      ========================================================================== */
   .bg-blue {
-    background: #2c6ed5;
+    background: #cad52c;
   }
   
   .bg-red {
@@ -221,11 +224,21 @@
   }
   
   .p-b-100 {
-    padding-bottom: 100px;
+    padding-bottom: 200px;
   }
   
   .m-r-45 {
     margin-right: 45px;
+  }
+  .card-custom{
+  position: relative;
+    display: flex;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 0.25rem;
   }
   
   /* ==========================================================================
@@ -291,7 +304,7 @@
   }
   
   .btn--blue {
-    background: #4272d7;
+    background: #428dd7;
   }
   
   .btn--blue:hover {

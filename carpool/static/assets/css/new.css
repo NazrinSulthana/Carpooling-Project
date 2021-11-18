@@ -1,0 +1,143 @@
+.card-custom{
+    position: relative;
+    display: flex;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 0.25rem;
+    width:100px;
+
+}
+.card-wrap{
+    display: flex;
+    height: 100%;
+    width: 100%;
+
+}
+
+a:hover{
+    background-color: #1f9482;
+}
+
+.bg-gra-02{
+     background-image: url( ../images/pool.jpg) !important;
+      background-repeat: no-repeat;
+      background-size: cover;
+    background-position: center;
+
+  }
+  .admin-wrapper{
+  height: 700px;
+   background-image: url( ../images/login.jpeg) !important;
+  }
+  .owner-wrapper{
+  height: 500px;
+   background-image: url( ../images/car.jpg) !important;
+  }
+  .color-black{
+  color:#000 !important;
+  }
+  .color-white{
+  color: #fff !important;
+  }
+
+  .centered{
+      position: absolute;
+      top: 10%;
+      align-content: center;
+      left: 50%;
+      font-size: xx-large;
+      font-style: oblique;
+      transform: translate(-50%,-50%);
+  }
+.card-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 14px;
+    background: #fff;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+
+}
+.login-custom{
+    height: 50px !important;
+    width: 150px;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+.card-seat{
+    color: #000;
+    font-size: 13px;
+    font-weight: 300;
+    }
+.card-size{
+    color: #000;
+    height:17px;
+}
+
+.card-prof{
+    height: auto;
+    width: 102px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.owner-heading{
+
+}
+
+.thm-btn {
+     height: 78px;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-appearance: none;
+    border: none;
+    outline: none !important;
+    background-color: var(--thm-primary);
+    color: var(--thm-base);
+    font-size: 14px;
+    font-weight: 900;
+    transition: 500ms;
+    border-radius: 5px;
+    padding: 0px !important ;
+    text-transform: capitalize;
+}
+.thm-btn-emergency {
+     height: 78px;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-appearance: none;
+    border: none;
+    outline: none !important;
+    background-color: var(--thm-primary);
+    color: var(--thm-base);
+    font-size: 14px;
+    font-weight: 900;
+    transition: 500ms;
+    border-radius: 5px;
+    padding: 0px !important ;
+    text-transform: capitalize;
+    height: 35px;
+    text-align: center;
+}
+
+.slider-h2{
+bottom: 17.2rem !important;
+font-size: 50px !important;
+}
+@media (max-width: 767px){
+.main-menu-wrapper__btn-box{
+margin: 10px 0px !important;
+}
+.main-menu-wrapper__right{
+flex-direction: column !important;
+width: 100%;
+margin-top: 60px;
+}
+}

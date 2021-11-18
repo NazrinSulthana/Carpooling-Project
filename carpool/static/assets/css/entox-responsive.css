@@ -1229,6 +1229,7 @@
 }    
 .main-menu-wrapper__right {
     display: none;
+    flex-direction: none;
 }    
 .main-menu-wrapper__main-menu {
     float: right;

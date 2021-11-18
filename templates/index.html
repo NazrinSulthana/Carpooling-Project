@@ -48,6 +48,7 @@
     <link rel="stylesheet" href="{% static 'assets/css/entox.css' %}" />
     <link rel="stylesheet" href="{% static 'assets/css/entox-responsive.css' %}" />
     <link rel="stylesheet" href="{% static 'assets/css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/new.css' %}"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <script async
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIge8SKUYjjhEEzG2yEtvgm4aG9a9aK50&libraries=places&callback=initMap">
@@ -60,44 +61,39 @@
     </div>
     <!-- /.preloader -->
     <div class="page-wrapper">
-        <header class="main-header clearfix">
+        <header class="main-header clearfix" style="background-color:#000;">
             
             <nav class="main-menu clearfix">
                 <div class="main-menu-wrapper clearfix">
                     <div class="main-menu-wrapper__left clearfix">
                         <div class="main-menu-wrapper__logo">
-                            <a href="index-2.html"><img src="{% static 'assets/images/resources/logo-1.png' %}" alt=""></a>
+                            <img src="{% static 'assets/images/loggo.jpg' %}" style="width:180px;height:80px;" alt="">
                         </div>
                         <div class="main-menu-wrapper__main-menu">
                             <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
                             <ul class="main-menu__list">
-                                <li class="dropdown current">
-                                    <a href="index.html">Home</a>
-                                    <ul>
-                                        <li>
-                                            <a href="index.html">Home</a>
-                                        </li>
-                                        <li><a href="index2publishride.html">Publish Ride</a></li>
-                                        <!-- <li><a href="index3.html">Home Three</a></li> -->
-                                        <!-- <li class="dropdown">
-                                            <a href="#">Header Styles</a>
-                                            <ul>
-                                                <li><a href="index-2.html">Header One</a></li>
-                                                <li><a href="index-2.html">Header Two</a></li>
-                                                <li><a href="index-2.html">Header Three</a></li>
-                                            </ul>
-                                        </li> -->
-                                    </ul>
-                                </li>
+<!--                                <li class="dropdown current">-->
+<!--                                    <a href="index.html">Home</a>-->
+<!--                                    <ul>-->
+<!--                                        <li>-->
+<!--                                            <a href="index.html">Home</a>-->
+<!--                                        </li>-->
+<!--                                        <li><a href="index2publishride.html">Publish Ride</a></li>-->
+<!--                                        &lt;!&ndash; <li><a href="index3.html">Home Three</a></li> &ndash;&gt;-->
+<!--                                        &lt;!&ndash; <li class="dropdown">-->
+<!--                                            <a href="#">Header Styles</a>-->
+<!--                                            <ul>-->
+<!--                                                <li><a href="index-2.html">Header One</a></li>-->
+<!--                                                <li><a href="index-2.html">Header Two</a></li>-->
+<!--                                                <li><a href="index-2.html">Header Three</a></li>-->
+<!--                                            </ul>-->
+<!--                                        </li> &ndash;&gt;-->
+<!--                                    </ul>-->
+<!--                                </li>-->
 
-                                <li class="dropdown">
-                                    <a href="help.html">Help</a>
-                                    <!-- <ul>
-                                        <li><a href="about.html">About</a></li>
-                                        <li><a href="how-it-works.html">How It Works</a></li>
-                                        <li><a href="404.html">404</a></li>
-                                    </ul> -->
-                                </li>
+<!--                                <li class="dropdown">-->
+<!--                                    <a href="help.html">Help</a>-->
+<!--                                </li>-->
                                 <!-- <li class="dropdown">
                                     <a href="#">News</a>
                                     <ul>
@@ -105,24 +101,38 @@
                                         <li><a href="news-details.html">News Details</a></li>
                                     </ul>
                                 </li> -->
-                                <li><a href="contact.html">Contact</a></li>
+<!--                                <li><a href="contact.html">Contact</a></li>-->
                             </ul>
 
                         </div>
                     </div>
-                    <div class="main-menu-wrapper__right">
-                        <div class="main-menu-wrapper__search-box-cart-box">
-                            <a href="#" class="main-menu-wrapper__search search-toggler icon-magnifying-glass"></a>
+                    <div class="main-menu-wrapper__right d-flex justify-content-center align-items-center">
+
+                        <div class="main-menu-wrapper__btn-box">
+                            <a href="owner_reg" class="thm-btn main-menu-wrapper__btn">
+                                <div class="card-wrap">
+                                    <div class="card-info">
+                                        <span class="card-size">Owner Registration</span>
+                                         <span class="card-seat">Share Seats</span>
+                                    </div>
+                                    <img src="{% static 'assets/images/driver.jpg' %}" class="card-prof">
+                                </div>
+                            </a>
 
                         </div>
-                        <div class="main-menu-wrapper__btn-box">
-                            <a href="owner_reg" class="thm-btn main-menu-wrapper__btn">Owner_Register </a>
+                        <div class="main-menu-wrapper__btn-box" style="margin-left:20px">
+                            <a href="passenger_register" class="thm-btn main-menu-wrapper__btn">
+                             <div class="card-wrap">
+                                    <div class="card-info">
+                                        <span class="card-size">Passenger Registration</span>
+                                         <span class="card-seat">Looking for ride</span>
+                                    </div>
+                                    <img src="{% static 'assets/images/pass.jpg' %}" class="card-prof">
+                                </div>
+                            </a>
                         </div>
                         <div class="main-menu-wrapper__btn-box" style="margin-left:20px">
-                            <a href="passenger_register" class="thm-btn main-menu-wrapper__btn">Passenger_Register </a>
-                        </div>
-                        <div class="main-menu-wrapper__btn-box" style="margin-left:20px">
-                            <a href="login" class="thm-btn main-menu-wrapper__btn">Login</a>
+                            <a href="login" class="thm-btn main-menu-wrapper__btn login-custom">Login</a>
                         </div>
                     </div>
                 </div>
@@ -134,53 +144,34 @@
         </div><!-- /.stricky-header -->
 
         <!-- Banner One Start -->
-        <section class="main-slider">
-            <div class="swiper-container thm-swiper__slider" data-swiper-options='{"slidesPerView": 1, "loop": true,
-    "effect": "fade",
-     "pagination": {
-        "el": "#main-slider-pagination",
-        "type": "bullets",
-        "clickable": true
-      },
-    "navigation": {
-        "nextEl": "#main-slider__swiper-button-next",
-        "prevEl": "#main-slider__swiper-button-prev"
-    },
-    "autoplay": {
-        "delay": 5000
-    }}'>
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="image-layer"
-                            style="background-image: url(assets/images/backgrounds/main-slider-1-1.jpg);">
-                        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img src="{% static 'assets/images/bg1.jpg'%}" class="d-block w-100" alt="...">
 
-                        <div class="image-layer-overlay"></div>
-                        <!-- /.image-layer -->
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-12 text-center position-absolute main-title">
-                                    <div class="main-slider__content">
-                                        <h2 class="main-heading">Let’s hit the Road Together<br>Welcome..</h2>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <h5 class="carousel-caption slider-h2 d-none d-md-block">Lets Hit the Road Together...</h5>
+                      </div>
                     </div>
-                   
-                    
+                    <div class="carousel-item">
+                      <img src="{% static 'assets/images/bg2.jpg'%}" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="{% static 'assets/images/bg3.jpg'%}" class="d-block w-100" alt="...">
+                    </div>
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
                 </div>
-                <!-- If we need navigation buttons -->
-<!--                <div class="main-slider__nav">-->
-<!--                    <div class="swiper-button-prev" id="main-slider__swiper-button-next"><i-->
-<!--                            class="icon-right-arrow icon-left-arrow"></i>-->
-<!--                    </div>-->
-<!--                    <div class="swiper-button-next" id="main-slider__swiper-button-prev"><i-->
-<!--                            class="icon-right-arrow"></i>-->
-<!--                    </div>-->
-<!--                </div>-->
             </div>
-        </section>
+        </div>
         <!--Banner One End-->
 
 
@@ -259,7 +250,7 @@
                                             <h3 class="featured-one__img-content-title"><a
                                                     href=""><span> Delhi</span> <i class="bi bi-arrow-right"></i>
                                                     <span> Chennai</span></a></h3>
-                                            <p class="featured-one__img-content-car-price"><span>₹220</span> /per-ride</p>
+                                            <p class="featured-one__img-content-car-price"><span>₹1800</span> /per-ride</p>
                                         </div>
                                     </div>
                                 </div>
@@ -273,7 +264,7 @@
                                             <h3 class="featured-one__img-content-title"><a
                                                     href=""><span> Mumbai</span> <i class="bi bi-arrow-right"></i>
                                                     <span> Kanyakumari</span></a></h3>
-                                            <p class="featured-one__img-content-car-price"><span>₹130</span> /per-ride</p>
+                                            <p class="featured-one__img-content-car-price"><span>₹1500</span> /per-ride</p>
                                         </div>
                                     </div>
                                 </div>
@@ -287,7 +278,7 @@
                                             <h3 class="featured-one__img-content-title"><a
                                                     href=""><span> Kochi</span> <i class="bi bi-arrow-right"></i>
                                                     <span> Trivandrum</span></a></h3>
-                                            <p class="featured-one__img-content-car-price"><span>₹32</span> /per-ride</p>
+                                            <p class="featured-one__img-content-car-price"><span>₹800</span> /per-ride</p>
                                         </div>
                                     </div>
                                 </div>
@@ -301,7 +292,7 @@
                                             <h3 class="featured-one__img-content-title"><a
                                                     href=""><span> Selam</span> <i class="bi bi-arrow-right"></i>
                                                     <span> Mysore</span></a></h3>
-                                            <p class="featured-one__img-content-car-price"><span>₹230</span> /per-ride</p>
+                                            <p class="featured-one__img-content-car-price"><span>₹1000</span> /per-ride</p>
                                         </div>
                                     </div>
                                 </div>
@@ -324,99 +315,17 @@
         
 
         <!--About One Start-->
-        <section class="about-one">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-6 col-lg-6 wow slideInLeft" data-wow-duration="1500ms">
-                        <div class="about-one__img">
-                            <img src="{% static 'assets/images/resources/about-one-img-1.jpg' %}" alt="">
-                        </div>
-                    </div>
-                    <div class="col-xl-6 col-lg-6">
-                        <div class="about-one__content">
-                            <div class="section-title text-left">
-                                <span class="section-title__tagline">Get More Information</span>
-                                <h2 class="section-title__title">
-                                    Discover new cities at small prices with BlaBlaCar.</h2>
-                            </div>
-                            <p class="about-one__text">Every week, every month. To meet with a loved one, or to discover a new place. With a big family, or a big luggage. To Paris, Amsterdam or any other European destination.</p>
-                            <!-- <div class="about-one__bottom">
-                                <div class="about-one__bottom-icon">
-                                    <span class="icon-car-rental"></span>
-                                </div>
-                                <div class="about-one__bottom-text">
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority
-                                        have suffered alteration in some form.</p>
-                                </div>
-                            </div> -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+
         <!--About One End-->
 
         <!--Download Start-->
-        <section class="download">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-8">
-                        <div class="download__content">
-                            <p class="download__text">Get our mobile app for easy and convenient usage</p>
-                            <h2 class="download__title">Download Our Application</h2>
-                            <div class="download__btns">
-                                <div class="download__btn-1">
-                                    <a href="#">
-                                        <i class="fa fa-play"></i>
-                                        <p><span>Get in</span><br>Google Play</p>
-                                    </a>
-                                </div>
-                                <div class="download__btn-1 download__btn-2">
-                                    <a href="#">
-                                        <i class="fab fa-apple"></i>
-                                        <p><span>Get in</span><br>Play Store</p>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 wow fadeInRight" data-wow-duration="1500ms">
-                        <div class="download__screen">
-                            <div class="download__screen-image">
-                                <img src="{% static 'assets/images/resources/download-screen-img.png' %}" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+
         <!--Download End-->
 
         
 
         <!--CTA One Start-->
-        <section class="cta-one">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="cta-one__inner">
-                            <div class="cta-one__left">
-                                <div class="cta-one__icon">
-                                    <span class="icon-rent-sign"></span>
-                                </div>
-                                <div class="cta-one__content">
-                                    <p>3800 People Use this Services</p>
-                                    <h2>Best & Quality Rental Marketplace</h2>
-                                </div>
-                            </div>
-                            <div class="cta-one__btn-box">
-                                <a href="#" class="thm-btn cta-one__btn">Find Anything</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+
         <!--CTA One End-->
 
         <!--Site Footer One Start-->
@@ -429,10 +338,10 @@
                         <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
                             <div class="footer-widget__column footer-widget__about">
                                 <div class="footer-widget__about-logo">
-                                    <a href="index-2.html"><img src="{% static 'assets/images/resources/footer-logo.png' %}" alt=""></a>
+                                    <a href="index-2.html"><img src="{% static 'assets/images/loggo.jpg' %}" style="width: 80px;height: 40px;" alt=""></a>
                                 </div>
                                 <p class="footer-widget__about-text">It is the leading carpooling app in the world. Forget going into the city to get out of town. We connect people together, making it possible to travel literally anywhere, directly.</p>
-                                <a href="#" class="thm-btn footer-widget__about-btn">Offer a Ride<i class="bi bi-plus-square"></i></a>
+
                             </div>
                         </div>
                         <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">

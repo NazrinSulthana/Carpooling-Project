@@ -22,7 +22,7 @@
     --thm-font: 'Roboto', sans-serif;
     --thm-gray: #677283;
     --thm-gray-rgb: 103, 114, 131;
-    --thm-primary: #0aa5cd;
+    --thm-primary: #428dd7;
     --thm-primary-rgb: 10, 165, 205;
     --thm-black: #17202d;
     --thm-black-rgb: 23, 32, 45;
@@ -101,6 +101,7 @@ ul {
 .container {
     padding-left: 15px;
     padding-right: 15px;
+
 }
 
 @media (min-width: 1200px) {
@@ -121,22 +122,7 @@ ul {
     margin-bottom: 0;
 }
 
-.thm-btn {
-    position: relative;
-    display: inline-block;
-    vertical-align: middle;
-    -webkit-appearance: none;
-    border: none;
-    outline: none !important;
-    background-color: var(--thm-primary);
-    color: var(--thm-base);
-    font-size: 14px;
-    font-weight: 900;
-    padding: 9px 30px;
-    transition: 500ms;
-    border-radius: 5px;
-    text-transform: capitalize;
-}
+
 
 .thm-btn:hover {
     background: var(--thm-black);
@@ -290,7 +276,6 @@ ul {
 # Navigations One
 --------------------------------------------------------------*/
 .main-header {
-    background: transparent;
     position: absolute;
     left: 0px;
     top: 0px;
@@ -437,7 +422,7 @@ ul {
 
 .main-menu {
     position: relative;
-    padding: 0 100px;
+    padding: 0 50px;
     z-index: 91;
 }
 
@@ -570,7 +555,7 @@ ul {
     font-weight: 400;
     display: flex;
     align-items: center;
-    color: var(--thm-base);
+    color: #fff;
     position: relative;
     transition: all 500ms ease;
 }
@@ -610,7 +595,7 @@ ul {
 }
 
 .main-menu .main-menu__list>li:hover>a::before {
-    background-color: var(--thm-primary);
+    background-color: #000;
 }
 
 .main-menu .main-menu__list li ul,
@@ -2413,24 +2398,11 @@ ul {
     font-family: var(--thm-font);
 }
 
-
-
-
-
-
-
-/*--------------------------------------------------------------
-# Premium Ride
---------------------------------------------------------------*/
-.premium-ride {
+.premium-ride{
     position: relative;
     display: block;
     padding: 120px 0 78px;
 }
-
-
-
-
 
 .premium-ride__single {
     position: relative;

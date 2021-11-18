@@ -17,7 +17,7 @@
     <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
     <!-- Font special for pages-->
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!-- Vendor CSS-->
     <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
     <link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
@@ -25,33 +25,45 @@
     <!-- Main CSS-->
     {% load static %}
     <link href="{% static 'assets/css/main.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'assets/css/new.css' %}" rel="stylesheet" media="all">
 </head>
 
 <body>
-    <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
+    <header class="main-header clearfix" style="background-color:#000;">
+
+            <nav class="">
+                <div class="">
+                    <ul style="height: 70px;background-color: white;list-style-type: none; overflow: hidden;">
+                        <li class="active" style="width: 70px;height: 40px;float: right;margin-right: 100px; "><a href="/" style="display: block;padding: 8px;background-color: green;color:white;margin-top: 15px;text-decoration: none;"> HOME </a></li>
+<!--                        <li style="width: 180px;height: 40px;float: right;margin-right: 30px; "><a href="" style="display: block;padding: 8px;background-color: cadetblue;color:white;margin-top: 15px;text-decoration: none;"> OWNER REGISTRATION </a></li>-->
+                    </ul>
+                </div>
+            </nav>
+        </header>
+    <div class="page-wrapper p-t-130 p-b-100 font-poppins" style="min-height: 0;height: 340px;">
         <div class="wrapper wrapper--w680">
-            <div class="card card-4">
-                <div class="card-body">
+            <div class="card card-4 " style="margin-top: 250px;">
+                <div class="card-body" style="background-color: white;">
                     <h2 class="title">Login</h2>
                     <form method="post" >
                         {% csrf_token %}
                         <div class="row row-space">
                             <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">Username</label>
-                                    <input class="input--style-4" type="text" name="username">
+                                <div class="input-group ">
+<!--                                    <label class="label">Username</label>-->
+                                    <input class="input--style-4 border border-secondary"  placeholder="Username"  type="text" name="username">
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
-                                    <label class="label">Password</label>
-                                    <input class="input--style-4" type="password" name="password">
+<!--                                    <label class="label">Password</label>-->
+                                    <input class="input--style-4 border border-secondary" placeholder="Password" type="password" name="password">
                                 </div>
                             </div>
                         </div>
 
                         <div class="p-t-15">
-                            <button class="btn btn--radius-2 btn--blue" value="login" type="submit">Submit</button>
+                            <button class="btn btn--radius-2 btn--green " style="margin-left: 200px;" value="login" type="submit">Submit</button>
                         </div>
                     </form>
                 </div>

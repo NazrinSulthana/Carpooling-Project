@@ -44,6 +44,7 @@
     <link rel="stylesheet" href="{% static 'assets/vendors/timepicker/timePicker.css' %}" />
 
     <!-- template styles -->
+    <link rel="stylesheet" href="{% static 'assets/css/new.css' %}" />
     <link rel="stylesheet" href="{% static 'assets/css/entox.css' %}" />
     <link rel="stylesheet" href="{% static 'assets/css/entox-responsive.css' %}" />
     <link rel="stylesheet" href="{% static 'assets/css/style.css' %}" />
@@ -71,22 +72,8 @@
                             <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
                             <ul class="main-menu__list">
                                 <li class="dropdown current">
-                                    <a href="index.html">Home</a>
-                                    <ul>
-                                        <li>
-                                            <a href="index.html">Home One</a>
-                                        </li>
-                                        <li><a href="index.html">Home Two</a></li>
-                                        <li><a href="index.html">Home Three</a></li>
-                                        <li class="dropdown">
-                                            <a href="#">Header Styles</a>
-                                            <ul>
-                                                <li><a href="index.html">Header One</a></li>
-                                                <li><a href="index.html">Header Two</a></li>
-                                                <li><a href="index.html">Header Three</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
+                                    <a href="/">Home</a>
+
                                 </li>
                                 <!-- <li class="dropdown">
                                     <a href="#">Rent a Car</a>
@@ -96,12 +83,12 @@
                                     </ul>
                                 </li> -->
                                 <li class="dropdown">
-                                    <a href="help.html">Help</a>
-                                    <ul>
-                                        <li><a href="help.html">About</a></li>
-                                        <li><a href="how-it-works.html">How It Works</a></li>
-                                        <li><a href="">404</a></li>
-                                    </ul>
+                                    <a href="feedbackpass">Complaint</a>
+<!--                                    <ul>-->
+<!--                                        <li><a href="help.html">About</a></li>-->
+<!--                                        <li><a href="how-it-works.html">How It Works</a></li>-->
+<!--                                        <li><a href="">404</a></li>-->
+<!--                                    </ul>-->
                                 </li>
                                 <!-- <li class="dropdown">
                                     <a href="#">News</a>
@@ -110,17 +97,19 @@
                                         <li><a href="news-details.html">News Details</a></li>
                                     </ul>
                                 </li> -->
-                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="payment">Payment</a></li>
+                                <li><a href="profile">Profile</a></li>
+                                <li class="dropdown">
+                                    <a href="logout/">Logout</a>
+
+                                </li>
                             </ul>
                         </div>
                     </div>
                     <div class="main-menu-wrapper__right">
-                        <div class="main-menu-wrapper__search-box-cart-box">
-                            <a href="#" class="main-menu-wrapper__search search-toggler icon-magnifying-glass"></a>
-                            
-                        </div>
-                        <div class="main-menu-wrapper__btn-box">
-                            <a href="index2publishride.html" class="thm-btn main-menu-wrapper__btn">Offer a Ride <i class="bi bi-plus-square"></i></a>
+
+                        <div class="emergency-btn" style="">
+                            <a href="emergency" class="thm-btn-emergency btn btn-primary main-menu-wrapper__btn" style="width:100px;height:50px;"><p></p>Emergency <i class="bi bi-plus-square"></i></a>
                         </div>
                     </div>
                 </div>
@@ -132,328 +121,44 @@
         </div><!-- /.stricky-header -->
 
         <!-- Banner Two Start -->
-        <section class="banner-two">
-            <div class="banner-bg-slide"
-                data-options='{ "delay": 5000, "slides": [ { "src": "assets/images/backgrounds/main-slider-2-1.jpg" }, { "src": "assets/images/backgrounds/main-slider-2-2.jpg" }, { "src": "assets/images/backgrounds/main-slider-2-3.jpg" } ], "transition": "fade", "timer": false, "align": "top" }'>
-            </div><!-- /.banner-bg-slide -->
+        <section class="admin-wrapper" style="background-image:url(../images/team.jpg);">
             <div class="banner-bg-slide-overly"></div>
             <div class="container">
                 <div class="row">
                     <div class="col-xl-12">
-                        <div class="banner-two__content">
+                        <div class="banner-two__content" style="margin-top:200px;">
                             
-                            <h2 class="banner-two__title">Share Your Ride with Passengers</h2>
-                            <form class="banner-two-form">
-                                <ul class="list-unstyled banner-two__type-boxes clearfix">
-                                    <li class="banner-two__input-box">
+                            <h2 class="banner-two__title" style="text-align: center;">Seek Your Ride</h2><br>
+                            <form class="banner-two-form" method="post" action="">
+                                {% csrf_token %}
+                                <ul class="list-unstyled banner-two__type-boxes clearfix" style="margin-left: 160px;">
+                                    <li class="banner-two__input-box" style="text-align: center;">
                                         <li class="search-box__input">
-                                            <input type="text" class="selectpicker" id="search-input" placeholder="Where are you leaving from?">
+                                            <input type="text" class="selectpicker" id="search-input" name="leavingfrom" placeholder="Where are you leaving from?">
                                         </li>
                                     </li>
                                     <li class="banner-two__input-box">
                                         <li class="search-box__input">
-                                            <input type="text" class="selectpicker" id="search-input" placeholder="Where are you heading?">
+                                            <input type="text" class="selectpicker" id="search-input" name="leavingto" placeholder="Where are you heading?">
                                         </li>
                                     </li>
                                     <li class="banner-two__input-box">
-                                        <button type="submit" class="banner-two__btn"><a href="routesetting.html" style="color: white;">Publish</a></button>
+                                        <button type="submit" class="banner-two__btn"><a href="listofride" style="color:white;"> Seek Ride</a></button>
                                     </li>
                                 </ul>
                             </form>
-                            <div class="banner-two_icon-boxes">
-                                <ul class="list-unstyled banner-two__icons">
-                                    <li>
-                                        <span class="icon-house"></span>
-                                    </li>
-                                    <li>
-                                        <span class="icon-building"></span>
-                                    </li>
-                                    <li>
-                                        <span class="icon-shopping-mall"></span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="banner-two__bottom-content">
-                                <div class="banner-two-__bottom-icon">
-                                    <img src="assets/images/shapes/banner-two-arrow.png" alt="">
-                                </div>
-                                <div class="banner-two__bottom-discover-more">
-                                    <a href="#">Discover More Areas</a>
-                                </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <!--Banner Two End-->
-
-        
-
-        <!--Why Choose Start-->
-        <section class="why-choose-one">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-6 col-lg-6">
-                        <div class="section-title text-left">
-                            <span class="section-title__tagline">Our Benefits</span>
-                            <h2 class="section-title__title">The best of carpooling </h2>
-                        </div>
-                    </div>
-                    <div class="col-xl-6 col-lg-6">
-                        <div class="why-choose-one__right-text-box">
-                            
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xl-4 col-lg-4">
-                        <!--Why Choose Single-->
-                        <div class="why-choose-one__single">
-                            <div class="why-choose-one__icon">
-                                <span class=""><i class="fas fa-coins"></i></span>
-                            </div>
-                            <div class="why-choose-one__text-box">
-                                <p>Save on travel costs</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4">
-                        <!--Why Choose Single-->
-                        <div class="why-choose-one__single">
-                            <div class="why-choose-one__icon">
-                                <span class=""><i class="fas fa-check-circle"></i></span>
-                            </div>
-                            <div class="why-choose-one__text-box">
-                                <p>Join a trustworthy community</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4">
-                        <!--Why Choose Single-->
-                        <div class="why-choose-one__single">
-                            <div class="why-choose-one__icon">
-                                <span class="icon-customer-review"><i class="fas fa-rocket"></i></span>
-                            </div>
-                            <div class="why-choose-one__text-box">
-                                <p>Carpooling made simple</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--Why Choose End-->
-
-        <!--Rules Start-->
         <section class="rules">
             <div class="rules-bg jarallax" data-jarallax data-speed="0.2" data-imgPosition="50% 0%"
                 style="background-image: url(assets/images/backgrounds/rules-bg.jpg)"></div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-8 col-lg-7">
-                        <div class="rules__left">
-                            <h2 class="rules__title">Rules Before Taking <br> House on Rent</h2>
-                            <a href="#" class="thm-btn rules__btn">Find Anything</a>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-5">
-                        <div class="rules__right">
-                            <ul class="list-unstyled rules__list-box">
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>Making this the first true genertor Internet</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>Lorem Ipsum is not simply random text</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>If you are going to use a passage</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>Quis ipsum suspendisseviverra</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
         </section>
-        <!--Rules End-->
-
-        <!--Counter One Start-->
-        <!-- <section class="counters-one">
-            <div class="container">
-                <ul class="counters-one__box list-unstyled">
-                    <li class="counter-one__single wow fadeInUp" data-wow-delay="100ms">
-                        <div class="counter-one__icon">
-                            <span class="icon-document"></span>
-                        </div>
-                        <h3 class="odometer" data-count="6805">00</h3>
-                        <p class="counter-one__text">Total Listings</p>
-                    </li>
-                    <li class="counter-one__single wow fadeInUp" data-wow-delay="200ms">
-                        <div class="counter-one__icon">
-                            <span class="icon-architect"></span>
-                        </div>
-                        <h3 class="odometer" data-count="906">00</h3>
-                        <p class="counter-one__text">Team Members</p>
-                    </li>
-                    <li class="counter-one__single wow fadeInUp" data-wow-delay="300ms">
-                        <div class="counter-one__icon">
-                            <span class="icon-rental"></span>
-                        </div>
-                        <h3 class="odometer" data-count="200">00</h3>
-                        <p class="counter-one__text">Rental Marketplace</p>
-                    </li>
-                    <li class="counter-one__single wow fadeInUp" data-wow-delay="400ms">
-                        <div class="counter-one__icon">
-                            <span class="icon-satisfaction"></span>
-                        </div>
-                        <h3 class="odometer" data-count="9760">00</h3>
-                        <p class="counter-one__text">Happy Customers</p>
-                    </li>
-                </ul>
-            </div>
-        </section> -->
-        <!--Counter One End-->
-
-        
-
-        
-
-        
-
-        
-
-
-        <!--Site Footer One Start-->
-        <footer class="site-footer">
-            <div class="site-footer-bg" style="background-image: url(assets/images/backgrounds/site-footer-bg.jpg)">
-            </div>
-            <div class="container">
-                <div class="site-footer__top">
-                    <div class="row">
-                        <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
-                            <div class="footer-widget__column footer-widget__about">
-                                <div class="footer-widget__about-logo">
-                                    <a href="index-2.html"><img src="assets/images/resources/footer-logo.png" alt=""></a>
-                                </div>
-                                <p class="footer-widget__about-text">Lorem ipsum dolor sit ame consect etur pisicing
-                                    elit sed do eiusmod tempor incididunt ut labore.</p>
-                                <a href="#" class="thm-btn footer-widget__about-btn">Submit Ad</a>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
-                            <div class="footer-widget__column footer-widget__explore clearfix">
-                                <h3 class="footer-widget__title">Explore</h3>
-                                <ul class="footer-widget__explore-list footer-widget__explore-list-width list-unstyled">
-                                    <li><a href="about.html">About Us</a></li>
-                                    <li><a href="#">My Account</a></li>
-                                    <li><a href="how-it-works.html">How it Works</a></li>
-                                    <li><a href="#">Pricing Packages</a></li>
-                                    <li><a href="#">Safety Tips</a></li>
-                                </ul>
-                                <ul class="footer-widget__explore-list footer-widget__explore-list-two list-unstyled">
-                                    <li><a href="#">Our Agents</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
-                                    <li><a href="#l">FAQs</a></li>
-                                    <li><a href="news.html">Blog</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
-                            <div class="footer-widget__column footer-widget__contact">
-                                <h3 class="footer-widget__title">Contact</h3>
-                                <ul class="list-unstyled footer-widget__contact-list">
-                                    <li>
-                                        <div class="icon">
-                                            <span class="icon-pin"></span>
-                                        </div>
-                                        <div class="text">
-                                            <p>88 Broklyn Golden Street, USA</p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="icon">
-                                            <span class="icon-clock"></span>
-                                        </div>
-                                        <div class="text">
-                                            <p>Mon - Sat 8:00 - 6:30</p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="icon">
-                                            <span class="icon-email"></span>
-                                        </div>
-                                        <div class="text">
-                                            <p><a href="mailto:needhelp@company.com">needhelp@company.com</a></p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="icon">
-                                            <span class="icon-telephone"></span>
-                                        </div>
-                                        <div class="text">
-                                            <p><a href="tel:00-666-888-0000">00 666 888 0000</a></p>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
-                            <div class="footer-widget__column footer-widget__newsletter">
-                                <h3 class="footer-widget__title">Newsletter</h3>
-                                <p class="footer-widget__newsletter-text">Subsrcibe for latest articles and resources
-                                </p>
-                                <form class="footer-widget__newsletter-form">
-                                    <div class="footer-widget__newsletter-input-box">
-                                        <input type="email" placeholder="Email address" name="email">
-                                        <button type="submit" class="footer-widget__newsletter-btn"><i
-                                                class="fas fa-envelope"></i></button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="site-footer-bottom">
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <div class="site-footer-bottom__inner">
-                                <div class="site-footer__social">
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#" class="clr-fb"><i class="fab fa-facebook"></i></a>
-                                    <a href="#" class="clr-ins"><i class="fab fa-instagram"></i></a>
-                                </div>
-                                <p class="site-footer-bottom__copy-right">© Copyright 2021 by <a
-                                        href="#">Layerdrops.com</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!--Site Footer One End-->
 
 
     </div><!-- /.page-wrapper -->
