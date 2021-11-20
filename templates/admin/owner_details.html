@@ -141,8 +141,10 @@
                                     <td>{{ own.user.first_name}}</td>
                                     <td>{{ own.user.email}}</td>
                                     <td>{{ own.contact}}</td>
-                                    <td>{{ own.image }} style="width: 115px; height: 115px;"></td>
-                                    <td>{{ own.license }} style="width: 115px; height: 115px;"></td>
+<!--                                    <td style="width: 115px; height: 115px;">{{ own.image }}></td>-->
+<!--                                    <td style="width: 115px; height: 115px;">{{ own.license }}></td>-->
+                                    <td><img src="{{ own.image.url}}" style="width: 115px; height: 115px;"></td>
+                                    <td><img src="{{ own.license.url}}" style="width: 115px; height: 115px;"></td>
                                     <td>{{ own.dob}}</td>
                                     <td>{{ own.gender}}</td>
 

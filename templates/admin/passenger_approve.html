@@ -65,19 +65,13 @@
             <nav class="main-menu clearfix">
                 <div class="main-menu-wrapper clearfix">
                     <div class="main-menu-wrapper__left clearfix">
-                        <div class="main-menu-wrapper__logo">
-                            <a href="index-2.html"><img src="{% static 'assets/images/resources/logo-1.png' %}" alt=""></a>
-                        </div>
+
                         <div class="main-menu-wrapper__main-menu">
                             <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
                             <ul class="main-menu__list">
                                 <li class="dropdown current">
                                     <a href="/admin">Home</a>
-<!--                                    <ul>-->
-<!--                                        <li>-->
-<!--                                            <a href="index.html">Home</a>-->
-<!--                                        </li>-->
-<!--                                    </ul>-->
+
                                 </li>
 
 <!--                                <li class="dropdown">-->
@@ -90,8 +84,7 @@
 
                         </div>
                     </div>
-
-               </div>
+                </div>
             </nav>
         </header>
 
@@ -143,20 +136,21 @@
 <!--                                <th class="info" style="color:white;">Details</th>-->
                                 <th class="info" style="color:white;">Approve</th>
                                 <th class="info" style="color:white;">Reject</th>
-
-                                {% for pass in new_passenger  %}
+                                {% for pas in new_passenger  %}
 
                                 <tr>
-                                    <td style="color:white;">{{ pass.user.first_name}}</td>
-                                    <td style="color:white;">{{ pass.user.email}}</td>
-                                    <td style="color:white;">{{ pass.contact}}</td>
-                                    <td style="color:white;">{{ pass.image}}</td>
-                                    <td style="color:white;">{{ pass.adhar}}</td>
-                                    <td style="color:white;">{{ pass.dob}}</td>
-                                    <td style="color:white;">{{ pass.gender}}</td>
-<!--                                    <td><a href="pas_details?id={{ pass.user_id}}" class=" btn btn-success">Details</a></td>-->
-                                    <td><a href="approve?id={{ pass.user_id}}" class=" btn btn-success">Approve</a></td>
-                                    <td><a href="reject?id={{ pass.user_id}}" class=" btn btn-danger">Reject</a></td>
+                                    <td style="color:white;">{{ pas.user.first_name}}</td>
+                                    <td style="color:white;">{{ pas.user.email}}</td>
+                                    <td style="color:white;">{{ pas.contact}}</td>
+<!--                                    <td style="color:white;">{{ own.image}}</td>-->
+<!--                                    <td style="color:white;">{{ own.license}}</td>-->
+                                    <td><img src="{{ pas.image.url }}" style="width: 115px; height: 115px;"></td>
+                                    <td><img src="{{ pas.adhar.url }}" style="width: 115px; height: 115px;"></td>
+                                    <td style="color:white;">{{ pas.dob}}</td>
+                                    <td style="color:white;">{{ pas.gender}}</td>
+<!--                                    <td><a href="ow_details?id={{ own.user_id}}" class=" btn btn-success">Details</a></td>-->
+                                    <td><a href="approve?id={{ pas.user_id}}" class=" btn btn-success">Approve</a></td>
+                                    <td><a href="reject?id={{ pas.user_id}}" class=" btn btn-danger">Reject</a></td>
 
                                 </tr>
 
@@ -168,7 +162,15 @@
 
 
                 </div>
-
+                <!-- If we need navigation buttons -->
+<!--                <div class="main-slider__nav">-->
+<!--                    <div class="swiper-button-prev" id="main-slider__swiper-button-next"><i-->
+<!--                            class="icon-right-arrow icon-left-arrow"></i>-->
+<!--                    </div>-->
+<!--                    <div class="swiper-button-next" id="main-slider__swiper-button-prev"><i-->
+<!--                            class="icon-right-arrow"></i>-->
+<!--                    </div>-->
+<!--                </div>-->
             </div>
         </section>
         <!--Banner One End-->

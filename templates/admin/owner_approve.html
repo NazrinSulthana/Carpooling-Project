@@ -142,8 +142,10 @@
                                     <td style="color:white;">{{ own.user.first_name}}</td>
                                     <td style="color:white;">{{ own.user.email}}</td>
                                     <td style="color:white;">{{ own.contact}}</td>
-                                    <td style="color:white;">{{ own.image}}</td>
-                                    <td style="color:white;">{{ own.license}}</td>
+<!--                                    <td style="color:white;">{{ own.image}}</td>-->
+<!--                                    <td style="color:white;">{{ own.license}}</td>-->
+                                    <td><img src="{{ own.image.url }}" style="width: 115px; height: 115px;"></td>
+                                    <td><img src="{{ own.license.url }}" style="width: 115px; height: 115px;"></td>
                                     <td style="color:white;">{{ own.dob}}</td>
                                     <td style="color:white;">{{ own.gender}}</td>
 <!--                                    <td><a href="ow_details?id={{ own.user_id}}" class=" btn btn-success">Details</a></td>-->

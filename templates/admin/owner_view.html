@@ -112,14 +112,14 @@
                                     </div>
                                 </div>
                             </div>
-                            <table class="table table-bordered table-striped" style="color:white;background-color: darkgray;margin-top:120px;">
+                            <table class="table table-bordered " style="color:white;background-color: darkgray;margin-top:120px;">
 
                                 <th class="info" style="color:white;">Owner Name</th>
                                 <th class="info" style="color:white;">Email</th>
                                 <th class="info" style="color:white;">Contact</th>
-<!--                                <th class="info" style="color:white;">Image</th>-->
-<!--                                <th class="info" style="color:white;">License</th>-->
-<!--                                <th class="info" style="color:white;">DOB</th>-->
+                                <th class="info" style="color:white;">Image</th>
+                                <th class="info" style="color:white;">License</th>
+                                <th class="info" style="color:white;">DOB</th>
                                 <th class="info" style="color:white;">Gender</th>
                                 <th class="info" style="color:white;">Details</th>
                                 <th class="info" style="color:white;">Reject</th>
@@ -129,9 +129,11 @@
                                     <td style="color:white;">{{ own.user.first_name}}</td>
                                     <td style="color:white;">{{ own.user.email}}</td>
                                     <td style="color:white;">{{ own.contact}}</td>
-<!--                                    <td>{{ own.image}}</td>-->
-<!--                                    <td>{{ own.license}}</td>-->
-<!--                                    <td>{{ own.dob}}</td>-->
+                                    <td>{{ own.image}}</td>
+                                    <td>{{ own.license}}</td>
+<!--                                    <td><img src="{{ own.image.url }}" style="width: 115px; height: 115px;"></td>-->
+<!--                                    <td><img src="{{ own.license.url }}" style="width: 115px; height: 115px;"></td>-->
+                                    <td>{{ own.dob}}</td>
                                     <td style="color:white;">{{ own.gender}}</td>
                                     <td><a href="ow_details?id={{ own.user_id}}" class=" btn btn-success">Details</a></td>
                                     <td><a href="reject?id={{ own.user_id}}" class=" btn btn-danger">Reject</a></td>

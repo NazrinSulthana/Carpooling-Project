@@ -57,10 +57,10 @@ class Owner_Registration(TemplateView):
         password = request.POST['password']
         image = request.FILES['image']
         fi = FileSystemStorage()
-        files = fi.save(image.name, image)
+        image = fi.save(image.name, image)
         license = request.FILES['license']
-        fi = FileSystemStorage()
-        files = fi.save(image.name, license)
+        file = FileSystemStorage()
+        license = file.save(license.name, license)
         try:
             user = User.objects.create_user(username=username, password=password, email=email, first_name=fullname,
                                              is_staff='0', last_name='0')
@@ -70,8 +70,8 @@ class Owner_Registration(TemplateView):
             Owner_Registration.dob = dob
             Owner_Registration.gender = gender
             Owner_Registration.contact = contact
-            Owner_Registration.image = files
-            Owner_Registration.license = files
+            Owner_Registration.image = image
+            Owner_Registration.license = license
             Owner_Registration.save()
             usertype = UserType()
             usertype.user = user
@@ -98,7 +98,7 @@ class Passenger_Registration(TemplateView):
         adhar = fi.save(adhar.name, adhar)
         image = request.FILES['image']
         fil = FileSystemStorage()
-        files = fil.save(image.name, image)
+        image = fil.save(image.name, image)
 
         try:
             user = User.objects.create_user(username=username, password=password, first_name=fullname, email=email,
@@ -110,7 +110,7 @@ class Passenger_Registration(TemplateView):
             reg.contact = contact
             reg.dob = dob
             reg.adhar = adhar
-            reg.image = files
+            reg.image = image
             reg.save()
             usertype = UserType()
             usertype.user = user
