@@ -20,7 +20,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.urls import path, include
 
 from carpool import views, owner_urls, admin_urls, passenger_urls
-from carpool.views import Index_View, Owner_Registration, Passenger_Registration, LoginView
+from carpool.views import Index_View, Owner_Registration, Passenger_Registration, LoginView, Forgotpassword
 from carpooling import settings
 
 urlpatterns = [
@@ -29,6 +29,7 @@ urlpatterns = [
     path('owner_reg',Owner_Registration.as_view()),
     path('passenger_register',Passenger_Registration.as_view()),
     path('login',LoginView.as_view()),
+    path('forgot', Forgotpassword.as_view()),
     path('owner/', owner_urls.urls()),
     path('passenger/', passenger_urls.urls()),
     path('admin/', admin_urls.urls()),

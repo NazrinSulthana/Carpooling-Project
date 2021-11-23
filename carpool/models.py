@@ -9,6 +9,7 @@ class UserType(models.Model):
 
 class OwnerEntry(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE)
+    password2 = models.CharField(max_length=100)
     contact = models.CharField(max_length=100)
     dob = models.CharField(max_length=50)
     gender = models.CharField(max_length=50)
@@ -17,6 +18,7 @@ class OwnerEntry(models.Model):
 
 class PassengerEntry(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    password2 = models.CharField(max_length=100)
     contact = models.CharField(max_length=100)
     dob = models.CharField(max_length=50)
     gender = models.CharField(max_length=50)

@@ -1,7 +1,8 @@
-
+from django.conf import settings
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.core.files.storage import FileSystemStorage
+from django.core.mail import EmailMessage
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 
@@ -41,6 +42,59 @@ class LoginView(TemplateView):
         else:
 
             return render(request,'index.html',{'message':"Invalid Username or Password"})
+
+
+class Forgotpassword(TemplateView):
+    template_name = 'forgot.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(Forgotpassword,self).get_context_data(**kwargs)
+        owner = OwnerEntry.objects.filter(user__last_name='1').count()
+        passenger = PassengerEntry.objects.filter(user__last_name='1').count()
+        admin = User.objects.get(is_superuser='1')
+        context['owner'] = owner
+        context['passenger'] = passenger
+        context['admin'] = admin
+        return context
+    def post(self, request, *args, **kwargs):
+        username = request.POST['username']
+        print(username)
+
+        email = request.POST['email']
+        print(email)
+        user_id = self.request.user.id
+        if User.objects.filter(last_name='1',username=username,email=email):
+           user = User.objects.get(last_name='1',username=username,email=email)
+           Type = UserType.objects.get(user_id=user.id)
+           if Type.type == 'owner':
+              owner = OwnerEntry.objects.get(user_id=user.id)
+              Password = owner.password2
+              email = EmailMessage(
+              Password,
+              'Your password',
+              settings.EMAIL_HOST_USER,
+              [user.email],
+              )
+              email.fail_silently = False
+              email.send()
+              return render(request,'index.html',{'message':"Send mail successfully"})
+           elif Type.type == 'passenger':
+
+              passenger = PassengerEntry.objects.get(user_id=user.id)
+              print(user)
+              email = EmailMessage(
+              passenger.password2,
+              'Your password',
+              settings.EMAIL_HOST_USER,
+              [user.email],
+               )
+              email.fail_silently = False
+              email.send()
+              return render(request,'index.html',{'message':"Send mail successfully"})
+
+        else:
+           return render(request,'index.html',{'message':"This User Is Not Exist"})
+
 
 
 
