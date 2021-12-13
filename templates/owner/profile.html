@@ -45,6 +45,7 @@
 
     <!-- template styles -->
     <link rel="stylesheet" href="{% static 'assets/css/entox.css' %}" />
+<!--    <link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />-->
     <link rel="stylesheet" href="{% static 'assets/css/new.css' %}" />
     <link rel="stylesheet" href="{% static 'assets/css/entox-responsive.css' %}" />
     <link rel="stylesheet" href="{% static 'assets/css/style.css' %}" />
@@ -52,34 +53,103 @@
     <script async
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIge8SKUYjjhEEzG2yEtvgm4aG9a9aK50&libraries=places&callback=initMap">
 </script>
+
+    <style>
+        body {
+    margin: 0;
+    padding-top: 40px;
+    color: #2e323c;
+    background: #f5f6fa;
+    position: relative;
+    height: 100%;
+}
+.account-settings .user-profile {
+    margin: 0 0 1rem 0;
+    padding-bottom: 1rem;
+    text-align: center;
+}
+.account-settings .user-profile .user-avatar {
+    margin: 0 0 1rem 0;
+}
+.account-settings .user-profile .user-avatar img {
+    width: 90px;
+    height: 90px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+}
+.account-settings .user-profile h5.user-name {
+    margin: 0 0 0.5rem 0;
+}
+.account-settings .user-profile h6.user-email {
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #9fa8b9;
+}
+.account-settings .about {
+    margin: 2rem 0 0 0;
+    text-align: center;
+}
+.account-settings .about h5 {
+    margin: 0 0 15px 0;
+    color: #007ae1;
+}
+.account-settings .about p {
+    font-size: 0.825rem;
+}
+.form-control {
+    border: 1px solid #cfd1d8;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    font-size: .825rem;
+    background: #ffffff;
+    color: #2e323c;
+}
+
+.card {
+    background: #ffffff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: 0;
+    margin-bottom: 1rem;
+}
+
+    </style>
+
 </head>
 
 
 <body>
+{% if message %}
+    <script>
+    alert("{{ message }}")
+    </script>
+    {% endif %}
     <div class="preloader">
         <img class="preloader__image" width="60" src="assets/images/loader.png" alt="" />
     </div>
-    <!-- /.preloader -->
-    <div class="page-wrapper" style="background-color:">
-        <header class="main-header clearfix">
+      <div class="page-wrapper">
+        <header class="main-header clearfix" style="background-color:#000;height:100px;">
 
             <nav class="main-menu clearfix">
                 <div class="main-menu-wrapper clearfix">
                     <div class="main-menu-wrapper__left clearfix">
                         <div class="main-menu-wrapper__logo">
-                            <a href="index-2.html"><img src="assets/images/resources/logo-1.png" alt=""></a>
+                          <h1 style="color:white;"><span style="color:red;">CAR</span>PooL</h1>
+
                         </div>
                         <div class="main-menu-wrapper__main-menu">
                             <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
-                            <ul class="main-menu__list">
-                                <li class="dropdown current">
-                                    <a href="/owner">Home</a>
-
-                                </li>
+                            <ul class="main-menu__list" style="margin-left:00px;">
 
                                 <li class="dropdown">
-                                    <a href="" class="active">Profile</a>
+                                    <a href="/owner" class="">Previous</a>
+
                                 </li>
+
 
                             </ul>
                         </div>
@@ -89,54 +159,233 @@
             </nav>
         </header>
 
+          <div class="container" style="margin-top:150px;">
+            <div class="row gutters">
+            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+            <div class="card h-100">
+                <div class="card-body">
+                    <div class="account-settings">
+                        <div class="user-profile">
+                            <div class="user-avatar">
+                                <img src="{{ owner.image.url }}" alt="Maxwell Admin">
+                            </div>
+                            <h5 class="user-name">{{ owner.user.first_name }}</h5>
+                            <h6 class="user-email">{{ owner.user.email }}</h6>
+                        </div>
+                        <div class="about">
+                            <h5>About</h5>
 
-                        <div class="container" style="background-color: cadetblue;">
-                            <div class="row">
-                                <div class="banner-info" style="margin-top:50px;">
-                                  <h2 style="color:white;margin-left:400px;">Update your Profile</h2><br><br><br>
-                                <div class="input-icons" style="margin-left:30px;">
-                                  <p><label style="color:white">Name : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</label><label style="color:white;">{{ owner.user.first_name }}</label></p>
-                                  <p><label style="color:white">Email : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</label><label style="color:white;">{{ owner.user.email }}</label></p>
-                                  <p><label style="color:white">Contact : &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</label><label style="color:white;">{{ owner.contact }}</label></p>
-                                  <p><label style="color:white">DOB : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &emsp;&emsp;&emsp;</label><label style="color:white;">{{ owner.dob }}</label></p>
-                                  <p><label style="color:white">Gender :&nbsp;  &nbsp; &nbsp; &nbsp; &emsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;</label><label style="color:white;">{{ owner.gender }}</label></p>
-                                  <p><label style="color:white">License : &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</label><label style="color:white;">{{ owner.license }}</label></p>
-                                  <p><label style="color:white">Image : &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&emsp;</label><label style="color:white;">{{ owner.image }}</label></p>
+                            <p>NAME : &emsp;{{ owner.user.first_name }}</p>
+                            <p>DOB : &emsp;{{ owner.dob }}</p>
+                            <p>CONTACT : &emsp;{{ owner.contact }}</p>
+                            <p>GENDER : &emsp;{{ owner.gender }}</p>
+                            <p>LICENSE : &emsp;</p><img src="{{ owner.license.url }}" style="width:45%;height:45%;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+            <div class="card h-100">
 
-                                </div>
-
-                              </div><br><br>
-                              <h2 class="" style="text-align:center;color:white;">Update My Account</h2><br><br><br>
-                              <div class="">
-                                <form method="POST" action="" enctype="multipart/form-data" style="margin-left:330px;">
-                                    {% csrf_token %}
-                                    <input class="input-field" type="text" name="contact" placeholder="{{ owner.contact }}" style="text-align:center;color:black;"><br><br>
-                                    <input class="input-field" type="text" name="dob" placeholder="{{ owner.dob }}" style="text-align:center;color:black;"><br><br>
-<!--                                    <input class="input-field" type="text" name="gender" placeholder="{{ owner.gender }}" style="text-align:center;color:black;"><br><br>-->
-                                    <input class="input-field" type="file" name="license" placeholder="{{ owner.license }}" style="text-align:center;color:black;background-color:white;"><br><br>
-                                    <input class="input-field" type="file" name="image" placeholder="{{ owner.image }}" style="text-align:center;color:black;background-color:white;"><br><br>
-
-                                    <input class="input-field" type="submit" name="profile" value="profile" style="width: 120px;height: 40px;color:black;"><br><br>
-
-                                  </form>
-                              </div>
-
-                              <div class="">
-                                <form method="POST" action="" enctype="multipart/form-data" style="margin-left:330px;">
-                                    {% csrf_token %}
-                                    <label style="color:white;">Change Username</label>
-                                    <input class="input-field" type="text" name="username" placeholder="{{ owner.user.username }}" style="text-align:center;color:black;margin-left:30px;"><br><br>
-                                    <label style="color:white;">Change Password</label>
-                                    <input class="input-field" type="text" name="password" placeholder="{{ owner.user.password }}" style="text-align:center;color:black;margin-left:35px;"><br><br>
-
-                                    <input class="input-field" type="submit" name="profile" value="profile" style="width: 120px;height: 40px;color:black;"><br><br>
-
-                                  </form>
-                              </div>
+                <div class="card-body">
+                    <form method="POST" action="" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="row gutters">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <h4 class="mb-2 text-primary">Personal Details</h4>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 mt-3">
+                            <div class="form-group">
+                                <label for="fullName">Contact</label>
+                                <input type="text" class="form-control" name="contact" id="fullName" placeholder="Enter contact">
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 mt-3">
+                            <div class="form-group">
+                                <label for="eMail">DOB</label>
+                                <input type="text" class="form-control" id="eMail" name="dob" placeholder="Enter dob">
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 mt-3">
+                            <div class="form-group">
+                                <label for="phone">LICENSE</label>
+                                <input type="file" class="form-control" id="phone" name="license">
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 mt-3">
+                            <div class="form-group">
+                                <label for="website">Image</label>
+                                <input type="file" class="form-control" name="image" id="website">
+                            </div>
+                        </div>
+                        <div class="row gutters">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3">
+                            <div class="text-right mt-3">
+<!--                                <button type="" id="submit" name="submit" class="btn btn-secondary">Cancel</button>-->
+                                <button type="submit" id="submit" name="profile" class="btn btn-primary">Update</button>
                             </div>
                         </div>
                     </div>
+                    </div>
+                    </form>
+                    <form method="POST" action="" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="row gutters">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3">
+                            <h6 class="mt-3 mb-2 text-primary mt-3">More Details</h6>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 mt-3">
+                            <div class="form-group">
+                                <label for="Street">Username</label>
+                                <input type="text" class="form-control" name="username" id="Street" placeholder="Enter username">
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 mt-3">
+                            <div class="form-group">
+<!--                                <label for="ciTy"></label>-->
+<!--                                <input type="name" class="form-control" id="ciTy" placeholder="Enter City">-->
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 mt-3">
+                            <div class="form-group">
+                                <label for="sTate">Password</label>
+                                <input type="password" class="form-control" id="sTate" name="password" placeholder="Enter password">
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 mt-3">
+                            <div class="form-group">
+<!--                                <label for="zIp">Zip Code</label>-->
+<!--                                <input type="text" class="form-control" id="zIp" placeholder="Zip Code">-->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row gutters">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3">
+                            <div class="text-right mt-3">
+<!--                                <button type="" id="submit" name="submit" class="btn btn-secondary">Cancel</button>-->
+                                <button type="submit" id="submit" name="profile" class="btn btn-primary">Update</button>
+                            </div>
+                        </div>
+                    </div>
+                    </form>
+                </div>
 
+            </div>
+            </div>
+            </div>
+            </div>
+
+
+
+<!--        <section class="section about-section gray-bg" id="about" style="margin-top:100px;">-->
+<!--            <div class="container">-->
+<!--                <div class="row" style="margin-left: 100px;">-->
+<!--                    <div class="col-lg-6">-->
+<!--                        <div class="about-text go-to">-->
+<!--                            <h3 class="dark-color">About Me</h3>-->
+<!--                            <h6 class="theme-color lead"></h6><br>-->
+<!--                            <p><mark>{{ owner.user.first_name }}</mark><br>  “There’s a sunrise and a sunset every single day, and they’re absolutely free. Don’t miss so many of them”  </p>-->
+<!--                            <div class="row about-list">-->
+<!--                                <div class="col-md-6">-->
+<!--                                    <div class="media">-->
+<!--                                        <label>Birthday</label>-->
+<!--                                        <p>{{ owner.dob }}</p>-->
+<!--                                    </div>-->
+<!--                                    <div class="media">-->
+<!--                                        <label>Email</label>-->
+<!--                                        <p>{{ owner.user.email }}</p>-->
+<!--                                    </div>-->
+<!--                                    <div class="media">-->
+<!--                                        <label>Contact</label>-->
+<!--                                        <p>{{ owner.contact }}</p>-->
+<!--                                    </div>-->
+<!--                                    <div class="media">-->
+<!--                                        <label>Gender</label>-->
+<!--                                        <p>{{ owner.gender }}</p>-->
+<!--                                    </div>-->
+<!--                                    <div class="media">-->
+<!--                                        <label>License</label><br>-->
+<!--                                        <img src="{{ owner.license.url }}" style="width:55%;height:55%;">-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="col-md-6">-->
+<!--                                    <form method="POST" action="" enctype="multipart/form-data">-->
+<!--                                    {% csrf_token %}-->
+<!--                                    <div class="media">-->
+<!--                                        <label>Update&emsp;Contact</label>-->
+<!--                                        <input class="input-field" type="text" name="contact" placeholder="">-->
+<!--                                    </div>-->
+<!--                                    <div class="media">-->
+<!--                                        <label>Update&emsp;DOB</label><br>-->
+<!--                                        <input class="input-field" type="date" name="dob" placeholder="">-->
+<!--                                    </div>-->
+<!--                                    <div class="media">-->
+<!--                                        <label>Update&emsp;License</label>-->
+<!--                                        <input class="input-field" type="file" name="license" placeholder="">-->
+<!--                                    </div>-->
+<!--                                    <div class="media">-->
+<!--                                        <label>Update&emsp;Image</label>-->
+<!--                                        <input class="input-field" type="file" name="image" placeholder="">-->
+<!--                                    </div>-->
+<!--                                    <input class="input-field btn-primary" type="submit" name="profile" value="UPDATE" style="width: 120px;height: 40px;color:white;">-->
+<!--                                    </form>-->
+
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-lg-6">-->
+<!--                        <div class="about-avatar d-flex justify-content-center">-->
+<!--                            <img src="{{ owner.image.url }}" title="" alt="" style="height:auto;width:200px">-->
+<!--                        </div>-->
+<!--                        <div class="row about-list">-->
+<!--                        <div class="col-md-8">-->
+<!--                            <form method="POST" action="" enctype="multipart/form-data">-->
+<!--                                    {% csrf_token %}-->
+<!--                                    <div class="media">-->
+<!--                                        <label>Update&emsp;Username</label>-->
+<!--                                        <input class="input-field" type="text" name="username" placeholder="">-->
+<!--                                    </div>-->
+<!--                                    <div class="media">-->
+<!--                                        <label>Update&emsp;Password</label>-->
+<!--                                        <input class="input-field" type="text" name="password" placeholder="">-->
+<!--                                    </div>-->
+<!--                                    <input class="input-field btn-primary" type="submit" name="profile" value="UPDATE" style="width: 120px;height: 40px;color:white;">-->
+<!--                                    </form><br>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="counter">-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-6 col-lg-3">-->
+<!--                            <div class="count-data text-center">-->
+<!--                                <h6 class="count h2" data-to="500" data-speed="500">70</h6>-->
+<!--                                <p class="m-0px font-w-600">Happy Rides</p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="col-6 col-lg-3">-->
+<!--                            <div class="count-data text-center">-->
+<!--                                <h6 class="count h2" data-to="150" data-speed="150">70</h6>-->
+<!--                                <p class="m-0px font-w-600">Rides Completed</p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="col-6 col-lg-3">-->
+<!--                            <div class="count-data text-center">-->
+<!--                                <h6 class="count h2" data-to="850" data-speed="850">110</h6>-->
+<!--                                <p class="m-0px font-w-600">Photo Capture</p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="col-6 col-lg-3">-->
+<!--                            <div class="count-data text-center">-->
+<!--                                <h6 class="count h2" data-to="190" data-speed="190">10</h6>-->
+<!--                                <p class="m-0px font-w-600">Telephonic Talk</p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </section>-->
 
 
     <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>

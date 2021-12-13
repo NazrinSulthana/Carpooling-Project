@@ -41,7 +41,7 @@ class LoginView(TemplateView):
                 return render(request,'login.html',{'message':" User Account Not Authenticated"})
         else:
 
-            return render(request,'index.html',{'message':"Invalid Username or Password"})
+            return render(request,'login.html',{'message':"Invalid Username or Password"})
 
 
 class Forgotpassword(TemplateView):
@@ -109,6 +109,7 @@ class Owner_Registration(TemplateView):
         email = request.POST['email']
         contact = request.POST['contact']
         password = request.POST['password']
+        confirmpassword = request.POST['password2']
         image = request.FILES['image']
         fi = FileSystemStorage()
         image = fi.save(image.name, image)
@@ -124,6 +125,7 @@ class Owner_Registration(TemplateView):
             Owner_Registration.dob = dob
             Owner_Registration.gender = gender
             Owner_Registration.contact = contact
+            Owner_Registration.password2 = confirmpassword
             Owner_Registration.image = image
             Owner_Registration.license = license
             Owner_Registration.save()
@@ -131,7 +133,7 @@ class Owner_Registration(TemplateView):
             usertype.user = user
             usertype.type = "owner"
             usertype.save()
-            return redirect('/')
+            return redirect('/',{'message:"Registration completed"'})
         except:
             messages = "Enter Another Username"
             return render(request, 'index.html', {'messages': messages})
@@ -147,6 +149,7 @@ class Passenger_Registration(TemplateView):
         email = request.POST['email']
         contact = request.POST['contact']
         password = request.POST['password']
+        confirmpassword = request.POST['password2']
         adhar = request.FILES['adhar']
         fi = FileSystemStorage()
         adhar = fi.save(adhar.name, adhar)
@@ -162,6 +165,7 @@ class Passenger_Registration(TemplateView):
             reg.user = user
             reg.gender = gender
             reg.contact = contact
+            reg.password2 = confirmpassword
             reg.dob = dob
             reg.adhar = adhar
             reg.image = image
@@ -170,9 +174,9 @@ class Passenger_Registration(TemplateView):
             usertype.user = user
             usertype.type = "passenger"
             usertype.save()
-            return redirect('/')
+            return redirect('/', {'message:"Registration completed"'})
         except:
-            messages = "Register Successfully"
+            messages = "Enter Another Username"
             return render(request, 'index.html', {'messages': messages})
 
 

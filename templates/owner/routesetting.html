@@ -54,68 +54,48 @@
 </head>
 
 <body>
+{% if message %}
+    <script>
+    alert("{{ message }}")
+    </script>
+    {% endif %}
     <div class="preloader">
         <img class="preloader__image" width="60" src="assets/images/loader.png" alt="" />
     </div>
     <!-- /.preloader -->
-    <div class="page-wrapper">
-        <header class="main-header main-header-listing-page clearfix">
+   <div class="page-wrapper">
+        <header class="main-header clearfix" style="background-color:#000;height:100px;">
 
             <nav class="main-menu clearfix">
                 <div class="main-menu-wrapper clearfix">
-                    <div class="main-menu-wrapper__left">
+                    <div class="main-menu-wrapper__left clearfix">
                         <div class="main-menu-wrapper__logo">
-                            <a href="index-2.html"><img src="assets/images/resources/logo-1.png" alt=""></a>
+                          <h1 style="color:white;"><span style="color:red;">CAR</span>PooL</h1>
+
                         </div>
                         <div class="main-menu-wrapper__main-menu">
                             <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
-                            <ul class="main-menu__list">
-                                <li class="dropdown">
-                                    <a href="index.html">Home</a>
-                                    <ul>
-                                        <li>
-                                            <a href="/owner">Home</a>
-                                        </li>
-                                        <li><a href="index2publishride.html">Publish Ride</a></li>
-                                        <!-- <li><a href="index3.html">Home Three</a></li> -->
-                                        <li class="dropdown">
-                                            <a href="#">Header Styles</a>
-
-                                        </li>
-                                    </ul>
-                                </li>
+                            <ul class="main-menu__list" style="margin-left:00px;">
 
                                 <li class="dropdown">
-                                    <a href="help.html">Feedback</a>
-                                    <!-- <ul>
-                                        <li><a href="about.html">About</a></li>
-                                        <li><a href="how-it-works.html">How It Works</a></li>
-                                        <li><a href="404.html">404</a></li>
-                                    </ul> -->
+                                    <a href="/owner" class="">Previous</a>
+
                                 </li>
 
-                                <li><a href="contact.html">Payment</a></li>
+
                             </ul>
                         </div>
                     </div>
-                    <div class="main-menu-wrapper__right">
-                        <div class="main-menu-wrapper__search-box-cart-box">
-                            <a href="#" class="main-menu-wrapper__search search-toggler icon-magnifying-glass"></a>
-<!--                            <a href="#" class="main-menu-wrapper__cart icon-shopping-cart mini-cart__toggler"></a>-->
-                        </div>
+<!--                    <div class="main-menu-wrapper__right">-->
+
 <!--                        <div class="main-menu-wrapper__btn-box">-->
-<!--                            <a href="index2.html" class="thm-btn main-menu-wrapper__btn">Offer a Ride <i class="bi bi-plus-square"></i></a>-->
+<!--                            <a href="profile" class="btn btn-primary" style="background-color: ">My Profile <i class="bi bi-plus-square"></i></a>-->
 <!--                        </div>-->
-                    </div>
+<!--                    </div>-->
                 </div>
             </nav>
         </header>
 
-        <div class="stricky-header stricked-menu main-menu">
-            <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
-        </div><!-- /.stricky-header -->
-
-        <!--Listing Top Start-->
         <section class="listing-top">
             <div class="listing-top__container">
                 <div class="listing-top__left">
@@ -152,109 +132,152 @@
                                         <div class="row">
                                             <div class="col-xl-6">
                                                 <div class="listing__search-input">
-                                                    <input type="text" name="startlocation" placeholder="Start Location">
+                                                    <input type="text" style="color:black;" name="startlocation" required placeholder="Start Location">
                                                 </div>
                                             </div>
                                             <div class="col-xl-6">
                                                 <div class="listing__search-input">
-                                                    <input type="text" name="endlocation" placeholder="End Location">
-                                                </div>
-                                            </div>
-<!--                                            <div class="col-xl-6">-->
-<!--                                                <div class="listing__search-input">-->
-<!--                                                    <select class="selectpicker" aria-label="Default select example">-->
-<!--                                                        <option selected>Location</option>-->
-<!--                                                        <option value="1">One</option>-->
-<!--                                                        <option value="2">Two</option>-->
-<!--                                                        <option value="3">Three</option>-->
-<!--                                                    </select>-->
-<!--                                                </div>-->
-<!--                                            </div>-->
-<!--                                            <div class="col-xl-6">-->
-<!--                                                <div class="listing__search-input">-->
-<!--                                                    <select class="selectpicker" aria-label="Default select example">-->
-<!--                                                        <option selected>Select route</option>-->
-<!--                                                        <option value="1">One</option>-->
-<!--                                                        <option value="2">Two</option>-->
-<!--                                                        <option value="3">Three</option>-->
-<!--                                                    </select>-->
-<!--                                                </div>-->
-<!--                                            </div>-->
-                                            <div class="col-xl-6">
-                                                <div class="listing__search-input">
-                                                    <input type="time" name="time" placeholder="Select Time" style="width: 390px; height: 70px;">
+                                                    <input type="text" style="color:black;" name="endlocation" required placeholder="End Location">
                                                 </div>
                                             </div>
                                             <div class="col-xl-6">
                                                 <div class="listing__search-input">
-                                                    <input type="date" name="date" placeholder="Select Date" style="width: 390px; height: 70px;">
+                                                    <select class="selectpicker" style="color:black;" name="carnames" required aria-label="Default select example">
+                                                        <option selected style="color:black;">Select Car</option>
+                                                        {% for pub in cardetail %}
+                                                        <option value="{{ pub.carname }}" style="color:white;">{{ pub.carname }}</option>
+                                                        {% endfor %}
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6">
+                                                <div class="listing__search-input">
+                                                    <select class="selectpicker" name="seatno" required aria-label="Default select example">
+                                                        <option selected>Seat Availability</option>
+                                                        <option value="1">One</option>
+                                                        <option value="2">Two</option>
+                                                        <option value="3">Three</option>
+                                                        <option value="4">Four</option>
+                                                        <option value="5">Five</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6">
+                                                <div class="listing__search-input">
+                                                    <label class="label" style="margin-left:20px;color:black;">Is Smoking Allowed</label>
+                                                    <div style="margin-left:30px;">
+                                                        <label class="radio-container m-r-45" style="color:black;">Yes
+                                                            <input type="radio"  value="yes" name="smoking">
+                                                            <span class="checkmark"></span>
+                                                        </label>
+                                                        <label class="radio-container m-r-45" style="margin-left:30px;color:black;">No
+                                                            <input type="radio"  value="no" name="smoking">
+                                                            <span class="checkmark"></span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6">
+                                                <div class="listing__search-input">
+                                                    <label class="label" style="margin-left:20px;color:black;">Is Pets Allowed(if Yes, 20/-)</label>
+                                                    <div style="margin-left:30px;">
+                                                        <label class="radio-container m-r-45" style="color:black;">Yes
+                                                            <input type="radio"  value="yes" name="pets">
+                                                            <span class="checkmark"></span>
+                                                        </label>
+                                                        <label class="radio-container m-r-45" style="margin-left:30px;color:black;">No
+                                                            <input type="radio"  value="no" name="pets">
+                                                            <span class="checkmark"></span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6">
+                                                <div class="listing__search-input">
+                                                    <label class="label" style="margin-left:20px;color:black;">Is Music Allowed</label>
+                                                    <div style="margin-left:30px;">
+                                                        <label class="radio-container m-r-45" style="color:black;">Yes
+                                                            <input type="radio"  value="yes" name="music">
+                                                            <span class="checkmark"></span>
+                                                        </label>
+                                                        <label class="radio-container m-r-45" style="margin-left:30px;color:black;">No
+                                                            <input type="radio"  value="no" name="music">
+                                                            <span class="checkmark"></span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6">
+                                                <div class="listing__search-input">
+                                                    <label class="label" style="margin-left:20px;color:black;">Is Food Allowed(if Yes, 20/-)</label>
+                                                    <div style="margin-left:30px;">
+                                                        <label class="radio-container m-r-45" style="color:black;">Yes
+                                                            <input type="radio"  value="yes" name="food">
+                                                            <span class="checkmark"></span>
+                                                        </label>
+                                                        <label class="radio-container m-r-45" style="margin-left:30px;color:black;">No
+                                                            <input type="radio"  value="no" name="food">
+                                                            <span class="checkmark"></span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6">
+                                                <div class="listing__search-input">
+                                                    <input type="hidden" value="20" id="firstNumber">
+                                                    <input type="text" id="secondNumber" name="laggage" style="color:black;" required placeholder="Laggage Size ( 'in Kg' )">
+                                                    <input type="button" onClick="multiplyBy()" Value="Total" /><span id = "result"></span>
+
+                                                    <script>
+                                                    function multiplyBy()
+                                                    {
+                                                            num1 = document.getElementById("firstNumber").value;
+                                                            num2 = document.getElementById("secondNumber").value;
+                                                            document.getElementById("result").innerHTML = num1 * num2;
+                                                    }
+                                                    </script>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6">
+                                                <div class="listing__search-input">
+                                                    <input type="text" name="amount" style="color:black;" required placeholder="Total Amount">
                                                 </div>
                                             </div>
 <!--                                            <div class="col-xl-6">-->
-<!--                                                <div class="row">-->
-<!--                                                    <div class="col-xl-6">-->
-<!--                                                        <div class="min-price-input">-->
-<!--                                                            <input type="text" placeholder="Min price">-->
-<!--                                                        </div>-->
-<!--                                                    </div>-->
-<!--                                                    <div class="col-xl-6">-->
-<!--                                                        <div class="min-price-input">-->
-<!--                                                            <input type="text" placeholder="Max price">-->
-<!--                                                        </div>-->
-<!--                                                    </div>-->
-<!--                                                </div>-->
-<!--                                            </div>-->
-<!--                                            <div class="col-xl-6">-->
 <!--                                                <div class="listing__search-input">-->
-<!--                                                    <select class="selectpicker" aria-label="Default select example">-->
-<!--                                                        <option selected>Number of Passengers</option>-->
-<!--                                                        <option value="1">1</option>-->
-<!--                                                        <option value="2">2</option>-->
-<!--                                                        <option value="3">3</option>-->
-<!--                                                    </select>-->
+<!--                                                    <input type="hidden" value="1.4" id="fourthNumber">-->
+<!--                                                    <input type="text" name="amount" id="thirdNumber" style="color:black;" required placeholder="Total Amount">-->
+<!--                                                    <input type="button" onClick="addBy()" Value="Total" /><span id = "result2"></span>-->
+<!--                                                    <script>-->
+<!--                                                    function addBy()-->
+<!--                                                    {-->
+
+<!--                                                            num3 = document.getElementById("thirdNumber").value;-->
+<!--                                                            num4 = document.getElementById("fourthNumber").value;-->
+<!--                                                            num6 = num3 * num4;-->
+<!--                                                            document.getElementById("result2").innerHTML = num6;-->
+<!--                                                    }-->
+<!--                                                    </script>-->
 <!--                                                </div>-->
 <!--                                            </div>-->
-<!--                                            <div class="col-xl-6">-->
-<!--                                                <div class="listing__search-input">-->
-<!--                                                    <input type="text" placeholder="Phone number">-->
-<!--                                                </div>-->
-<!--                                            </div>-->
+                                            <div class="col-xl-6">
+                                                <div class="listing__search-input">
+                                                    <input type="time" name="time" placeholder="Select Time" style="width: 100%; height: 70px;">
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6">
+                                                <div class="listing__search-input">
+                                                    <input type="date" name="date" placeholder="Select Date" style="width: 100%; height: 70px;">
+                                                </div>
+                                            </div>
                                         </div>
-                                        <button type="submit" class="linsting__btn"> Publish Ride</button>
+                                        <button type="submit" class="linsting__btn" style="margin-left: 320px;"> Publish Ride</button>
                                     </form>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="listing__filter">
-                        <div class="row">
-                            <div class="col-xl-12">
-                                <div class="listing__filter-inner">
-                                    <div class="listing__filter-left">
-                                        <div class="listing__filter-icon">
-                                            <a href="listings-details.html" class="icon-grid active"></a>
-                                            <a href="listings-details.html" class="icon-list list-icon"></a>
-                                        </div>
-                                    </div>
-                                    <div class="listing__filter-right">
-                                        <div class="listing__filter-shorting-box">
-                                            <div class="listing__filter-shorting-box-text">
-                                                <p>Sort By:</p>
-                                            </div>
-                                            <div class="listing__filter-shorting-input">
-                                                <select class="selectpicker" aria-label="Default select example">
-                                                    <option selected>Default sorting</option>
-                                                    <option value="1">One</option>
-                                                    <option value="2">Two</option>
-                                                    <option value="3">Three</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
                     
                 </div>
                 <div class="listing__map">

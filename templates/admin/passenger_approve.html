@@ -45,6 +45,7 @@
     <link rel="stylesheet" href="{% static 'assets/vendors/timepicker/timePicker.css' %}" />
 
     <!-- template styles -->
+    <link rel="stylesheet" href="{% static 'assets/css/new.css' %}" />
     <link rel="stylesheet" href="{% static 'assets/css/entox.css' %}" />
     <link rel="stylesheet" href="{% static 'assets/css/entox-responsive.css' %}" />
     <link rel="stylesheet" href="{% static 'assets/css/style.css' %}" />
@@ -59,27 +60,65 @@
         <img class="preloader__image" width="60" src="assets/images/loader.png" alt="" />
     </div>
     <!-- /.preloader -->
-    <div class="page-wrapper">
-        <header class="main-header clearfix">
+   <div class="page-wrapper">
+        <header class="main-header clearfix" style="background-color:#000;height:100px;">
 
             <nav class="main-menu clearfix">
                 <div class="main-menu-wrapper clearfix">
                     <div class="main-menu-wrapper__left clearfix">
-
+                        <div class="main-menu-wrapper__logo">
+                            <h1 style="color:white;"><span style="color:red;">CAR</span>PooL</h1>
+                        </div>
                         <div class="main-menu-wrapper__main-menu">
                             <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
-                            <ul class="main-menu__list">
+                            <ul class="main-menu__list" style="margin-left:00px;">
                                 <li class="dropdown current">
-                                    <a href="/admin">Home</a>
+                                    <a href="/admin" class="">Home</a>
+                                    <ul>
+
+                                    </ul>
+                                </li>
+                                <li><a href="" class="">Approval View</a>
+                                    <ul>
+                                        <li><a href="ow_approve">Owner Approval</a></li>
+                                        <li><a href="pas_aprove">Passenger Approval</a></li>
+
+                                    </ul>
+                                </li>
+                                <li><a href="" class="">View</a>
+                                    <ul>
+                                        <li><a href="ownerview">Owner </a></li>
+                                        <li><a href="passengerview">Passenger </a></li>
+
+                                    </ul>
+                                </li>
+
+                                <li class="dropdown">
+                                    <a href="" class="">Complaint View</a>
+                                    <ul>
+                                        <li><a href="feedbackto">From Owner</a></li>
+                                        <li><a href="feedback">From Passenger</a></li>
+
+                                    </ul>
+
+                                </li>
+                                <li class="dropdown">
+<!--                                    <a href="admin/payment_action.html" class="color-black">Payment View</a>-->
+                                    <a href="" class="">Payment View</a>
+
+                                    <ul>
+                                        <li><a href="paymentaction">Owner Section</a></li>
+                                        <li><a href="paymentbypassenger?id={{ list.id }}">Passenger Section</a></li>
+
+                                    </ul>
 
                                 </li>
 
-<!--                                <li class="dropdown">-->
-<!--                                    <a href="help.html">Help</a>-->
+                                <li class="dropdown current">
+                                    <a href="logout/" class="">Logout</a>
 
-<!--                                </li>-->
+                                </li>
 
-<!--                                <li><a href="contact.html">Contact</a></li>-->
                             </ul>
 
                         </div>
@@ -88,26 +127,9 @@
             </nav>
         </header>
 
-        <div class="stricky-header stricked-menu main-menu">
-            <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
-        </div><!-- /.stricky-header -->
 
-        <!-- Banner One Start -->
-        <section class="main-slider">
-            <div class="swiper-container thm-swiper__slider" data-swiper-options='{"slidesPerView": 1, "loop": true,
-    "effect": "fade",
-     "pagination": {
-        "el": "#main-slider-pagination",
-        "type": "bullets",
-        "clickable": true
-      },
-    "navigation": {
-        "nextEl": "#main-slider__swiper-button-next",
-        "prevEl": "#main-slider__swiper-button-prev"
-    },
-    "autoplay": {
-        "delay": 5000
-    }}'>
+
+        <section class="" style="height:400px;background-color:;">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="image-layer"
@@ -116,15 +138,14 @@
 
                         <div class="image-layer-overlay"></div>
                         <!-- /.image-layer -->
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-12 text-center position-absolute main-title">
-                                    <div class="main-slider__content">
-<!--                                        <h2 class="main-heading">Owner_View</h2>-->
-                                    </div>
-                                </div>
-                            </div>
-                            <table class="table table-bordered table-striped" style="color:white;">
+                        <div class="container" style="margin-top: 100px;">
+                            <h2 class="main-heading" style="margin-top:200px;text-align: center;">Passenger Approval</h2>
+                        </div>
+                    </div>
+                </div>
+       </section>
+                    <div class="" style="margin-top:-20px;">
+                            <table class="table table-bordered table-striped" style="color:white;background-color: darkgray;margin-left:60px;width:90%">
 
                                 <th class="info" style="color:white;">Passenger Name</th>
                                 <th class="info" style="color:white;">Email</th>
@@ -158,195 +179,9 @@
                             </table>
 
                         </div>
-                    </div>
 
-
-                </div>
-                <!-- If we need navigation buttons -->
-<!--                <div class="main-slider__nav">-->
-<!--                    <div class="swiper-button-prev" id="main-slider__swiper-button-next"><i-->
-<!--                            class="icon-right-arrow icon-left-arrow"></i>-->
-<!--                    </div>-->
-<!--                    <div class="swiper-button-next" id="main-slider__swiper-button-prev"><i-->
-<!--                            class="icon-right-arrow"></i>-->
-<!--                    </div>-->
-<!--                </div>-->
-            </div>
-        </section>
-        <!--Banner One End-->
-
-
-
-
-        <!--Site Footer One Start-->
-        <footer class="site-footer">
-            <div class="site-footer-bg" style="background-image: url(assets/images/backgrounds/site-footer-bg.jpg)">
-            </div>
-            <div class="container">
-                <div class="site-footer__top">
-                    <div class="row">
-                        <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
-                            <div class="footer-widget__column footer-widget__about">
-                                <div class="footer-widget__about-logo">
-                                    <a href="index-2.html"><img src="{% static 'assets/images/resources/footer-logo.png' %}" alt=""></a>
-                                </div>
-                                <p class="footer-widget__about-text">It is the leading carpooling app in the world. Forget going into the city to get out of town. We connect people together, making it possible to travel literally anywhere, directly.</p>
-                                <a href="#" class="thm-btn footer-widget__about-btn">Offer a Ride<i class="bi bi-plus-square"></i></a>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
-                            <div class="footer-widget__column footer-widget__explore clearfix">
-                                <h3 class="footer-widget__title">Explore</h3>
-                                <ul class="footer-widget__explore-list footer-widget__explore-list-width list-unstyled">
-                                    <li><a href="about.html">About Us</a></li>
-                                    <li><a href="#">My Account</a></li>
-                                    <li><a href="how-it-works.html">How it Works</a></li>
-                                    <li><a href="#">Pricing Packages</a></li>
-                                    <li><a href="#">Safety Tips</a></li>
-                                </ul>
-                                <ul class="footer-widget__explore-list footer-widget__explore-list-two list-unstyled">
-                                    <li><a href="#">Our Agents</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
-                                    <li><a href="#l">FAQs</a></li>
-                                    <li><a href="news.html">Blog</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
-                            <div class="footer-widget__column footer-widget__contact">
-                                <h3 class="footer-widget__title">Contact</h3>
-                                <ul class="list-unstyled footer-widget__contact-list">
-                                    <li>
-                                        <div class="icon">
-                                            <span class="icon-pin"></span>
-                                        </div>
-                                        <div class="text">
-                                            <p>88 Broklyn Golden Street, USA</p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="icon">
-                                            <span class="icon-clock"></span>
-                                        </div>
-                                        <div class="text">
-                                            <p>Mon - Sat 8:00 - 6:30</p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="icon">
-                                            <span class="icon-email"></span>
-                                        </div>
-                                        <div class="text">
-                                            <p><a href="mailto:needhelp@company.com">needhelp@company.com</a></p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="icon">
-                                            <span class="icon-telephone"></span>
-                                        </div>
-                                        <div class="text">
-                                            <p><a href="tel:00-666-888-0000">00 666 888 0000</a></p>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
-                            <div class="footer-widget__column footer-widget__newsletter">
-                                <h3 class="footer-widget__title">Newsletter</h3>
-                                <p class="footer-widget__newsletter-text">Subsrcibe for latest articles and resources
-                                </p>
-                                <form class="footer-widget__newsletter-form">
-                                    <div class="footer-widget__newsletter-input-box">
-                                        <input type="email" placeholder="Email address" name="email">
-                                        <button type="submit" class="footer-widget__newsletter-btn"><i
-                                                class="fas fa-envelope"></i></button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="site-footer-bottom">
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <div class="site-footer-bottom__inner">
-                                <div class="site-footer__social">
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#" class="clr-fb"><i class="fab fa-facebook"></i></a>
-                                    <a href="#" class="clr-ins"><i class="fab fa-instagram"></i></a>
-                                </div>
-                                <p class="site-footer-bottom__copy-right">© Copyright 2021 by <a
-                                        href="#">Layerdrops.com</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!--Site Footer One End-->
-
-
-    </div><!-- /.page-wrapper -->
-
-
-    <div class="mobile-nav__wrapper">
-        <div class="mobile-nav__overlay mobile-nav__toggler"></div>
-        <!-- /.mobile-nav__overlay -->
-        <div class="mobile-nav__content">
-            <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
-
-            <div class="logo-box">
-                <a href="index.html" aria-label="logo image"><img src="{% static 'assets/images/resources/logo-1.png' %}" width="155"
-                        alt="" /></a>
-                <!-- <a href="index.html" aria-label="logoimage"><img src="assets/images/emblem.jpg" width="155"
-                        alt="" /></a>         -->
-            </div>
-            <!-- /.logo-box -->
-            <div class="mobile-nav__container"></div>
-            <!-- /.mobile-nav__container -->
-
-            <ul class="mobile-nav__contact list-unstyled">
-                <li>
-                    <i class="fa fa-envelope"></i>
-                    <a href="mailto:needhelp@packageName__.com">needhelp@entox.com</a>
-                </li>
-                <li>
-                    <i class="fa fa-phone-alt"></i>
-                    <a href="tel:666-888-0000">666 888 0000</a>
-                </li>
-            </ul><!-- /.mobile-nav__contact -->
-            <div class="mobile-nav__top">
-                <div class="mobile-nav__social">
-                    <a href="#" class="fab fa-twitter"></a>
-                    <a href="#" class="fab fa-facebook-square"></a>
-                    <a href="#" class="fab fa-pinterest-p"></a>
-                    <a href="#" class="fab fa-instagram"></a>
-                </div><!-- /.mobile-nav__social -->
-            </div><!-- /.mobile-nav__top -->
-
-
-
-        </div>
-        <!-- /.mobile-nav__content -->
     </div>
-    <!-- /.mobile-nav__wrapper -->
 
-    <div class="search-popup">
-        <div class="search-popup__overlay search-toggler"></div>
-        <!-- /.search-popup__overlay -->
-        <div class="search-popup__content">
-            <form action="#">
-                <label for="search" class="sr-only">search here</label><!-- /.sr-only -->
-                <input type="text" id="search" placeholder="Search Here..." />
-                <button type="submit" aria-label="search submit" class="thm-btn">
-                    <i class="icon-magnifying-glass"></i>
-                </button>
-            </form>
-        </div>
-        <!-- /.search-popup__content -->
-    </div>
-    <!-- /.search-popup -->
 
     <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
 

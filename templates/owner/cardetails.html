@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 {% load static %}
 
 <!-- Mirrored from layerdrops.com/entox/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 14 Sep 2021 06:49:16 GMT -->
@@ -44,6 +44,7 @@
     <link rel="stylesheet" href="{% static 'assets/vendors/timepicker/timePicker.css' %}" />
 
     <!-- template styles -->
+    <link rel="stylesheet" href="{% static 'assets/css/new.css' %}" />
     <link rel="stylesheet" href="{% static 'assets/css/entox.css' %}" />
     <link rel="stylesheet" href="{% static 'assets/css/entox-responsive.css' %}" />
     <link rel="stylesheet" href="{% static 'assets/css/style.css' %}" />
@@ -54,69 +55,63 @@
 </head>
 
 <body>
+{% if message %}
+    <script>
+    alert("{{ message }}")
+    </script>
+    {% endif %}
     <div class="preloader">
         <img class="preloader__image" width="60" src="assets/images/loader.png" alt="" />
     </div>
     <!-- /.preloader -->
-    <div class="page-wrapper">
-        <header class="main-header clearfix">
+<div class="page-wrapper">
+        <header class="main-header clearfix" style="background-color:#000;height:100px;">
 
             <nav class="main-menu clearfix">
                 <div class="main-menu-wrapper clearfix">
                     <div class="main-menu-wrapper__left clearfix">
                         <div class="main-menu-wrapper__logo">
-                            <a href="index-2.html"><img src="assets/images/resources/logo-1.png" alt=""></a>
+                          <h1 style="color:white;"><span style="color:red;">CAR</span>PooL</h1>
+
                         </div>
                         <div class="main-menu-wrapper__main-menu">
                             <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
-                            <ul class="main-menu__list">
-                                <li class="dropdown current">
-                                    <a href="/owner">Home</a>
-                                    <ul>
-                                        <li>
-<!--                                            <a href="index.html">Home</a>-->
-                                        </li>
-<!--                                        <li><a href="index2publishride.html">Publish Ride</a></li>-->
-                                        <!-- <li><a href="index3.html">Home Three</a></li> -->
-                                        <!-- <li class="dropdown">
-                                            <a href="#">Header Styles</a>
-                                            <ul>
-                                                <li><a href="index-2.html">Header One</a></li>
-                                                <li><a href="index-2.html">Header Two</a></li>
-                                                <li><a href="index-2.html">Header Three</a></li>
-                                            </ul>
-                                        </li> -->
-                                    </ul>
-                                </li>
+                            <ul class="main-menu__list" style="margin-left:00px;">
 
                                 <li class="dropdown">
+                                    <a href="/owner" class="">Previous</a>
 
                                 </li>
+                                <li class="dropdown">
+                                    <a href="mycars" style="color:white;">My Cars</a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="myrides" style="color:white;">My Rides</a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="comp_rides" style="color:white;">Completed Rides</a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="myrating" style="color:white;">My Rating</a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="routesetting" style="color:white;">Publish Ride</a>
+                                </li>
+
 
                             </ul>
                         </div>
                     </div>
-                    <div class="main-menu-wrapper__right">
 
-                        <div class="main-menu-wrapper__btn-box">
-                            <a href="routesetting" class="btn btn-primary" style="background-color: green">Publish Ride <i class="bi bi-plus-square"></i></a>
-                        </div>
-                    </div>
                 </div>
             </nav>
         </header>
 
-        <div class="stricky-header stricked-menu main-menu">
-            <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
-        </div><!-- /.stricky-header -->
-
-        <!-- Banner One Start -->
-        <section class="main-slider" style="background-image:url(../images/team.jpg)">
+        <section class="" style="margin-top:-30px;height:150px;">
+        <div class="" style="">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <div class="image-layer"
-                            style="background-image: url(assets/images/backgrounds/main-slider-1-1.jpg);">
-                        </div>
+
 
                         <div class="image-layer-overlay"></div>
                         <!-- /.image-layer -->
@@ -128,67 +123,121 @@
                             </div>
                         </div>
                     </div>
+                </div>
+        </div>
+    </section>
 
+        <section class="formG" style="margin:10px 450px;border: 2px solid;border-radius: 10px;padding: 35px;">
+            <div class="container">
+                <form action="" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                  <div class="custom-wrapper">
+                      <div class="form-group">
+                    <label for="exampleFormControlInput1">Car Name</label>
+                    <input type="text" name="carname" required class="form-control" id="exampleFormControlInput1" placeholder="enter car name">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleFormControlSelect1">Number of Seats</label>
+                    <select class="form-control" required name="seat" id="exampleFormControlSelect1">
+                      <option>Number of seats</option>
+                      <option value="3">3</option>
+                      <option value="5">5</option>
+                    </select>
+                  </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleFormControlInput1">Car Color</label>
+                    <input type="text" name="color" required class="form-control" id="exampleFormControlInput1" placeholder="enter car color">
+                  </div>
+                   <div class="form-group">
+                    <label for="exampleFormControlInput1">Car Number</label>
+                    <input type="text" name="carno" required class="form-control" id="exampleFormControlInput1" placeholder="enter car number">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleFormControlInput1">Car Image</label>
+                    <input type="file" name="image" required class="form-control" id="exampleFormControlInput1" placeholder="enter car image">
+                  </div>
+
+                                   <div class="input-group">
+                  <div class="input-group-prepend mt-3 mb-3 d-flex">
+                    <div class="input-group-text">
+                        <label>AC
+                      <input type="radio" name="acnonac" value="ac" required aria-label="Radio button for following text input"></label>
+
+                    </div>
+                      <div class="input-group-text">
+                          <label>NON AC<input type="radio" required name="acnonac" value="non_ac" aria-label="Radio button for following text input"></label>
+                      </div>
+                  </div>
 
                 </div>
-                <!-- If we need navigation buttons -->
-                <div class="main-slider__nav">
-                    <div class="swiper-button-prev" id="main-slider__swiper-button-next"><i
-                            class="icon-right-arrow icon-left-arrow"></i>
-                    </div>
-                    <div class="swiper-button-next" id="main-slider__swiper-button-prev"><i
-                            class="icon-right-arrow"></i>
-                    </div>
-                </div>
+ <button type="submit" class="btn btn-primary">Submit</button>
+</form>
             </div>
         </section>
 
 
         <!--Banner One End-->
-        <section class="search-box" style="margin-top:-450px;">
-            <div class="search-box__container"style="background-color: whitesmoke">
-                <form action="" method="post" class="search-box__form">
-                    {% csrf_token %}
-                    <ul class="list-unstyled search-box__main clearfix search-list" style="margin-top: -20px;">
-                        <li class="search-box__input">
-                            <input type="text" class="selectpicker" id="search-input" name="carname" placeholder="Car Name">
-                        </li>
-                        <li class="search-box__input">
-                         <select class="selectpicker" name="seat" aria-label="Default select example">
-                             <option selected>Number of Seats</option>
-                             <option value="1">1</option>
-                             <option value="2">2</option>
-                             <option value="3">3</option>
-                         </select>
-                         </li>
-                        <li class="search-box__input">
-                            <input type="text" class="selectpicker" id="search-input" name="color" placeholder="Car Color">
-                        </li>
-
-                        <li class="search-box__input">
-                            <input type="text" name="carno" placeholder="Car Number" id="">
-
-                        </li>
-                        <li class="search-box__input">
-                            <button type="submit" class="search-box__btn" style="background-color: green">Submit</button>
-                        </li>
-                    </ul>
-                </form>
-            </div>
-        </section>
-        <!--Search Box  Start-->
+<!--        <section class="search-box" style="margin-top:30px;">-->
+<!--            <div class="search-box__container" style="border: 2px solid">-->
+<!--                <form action="" method="post" class="search-box__form" style="margin-left:85px;">-->
+<!--                    {% csrf_token %}-->
+<!--                    <div class="row">-->
+<!--                    <label>Car Name</label>-->
+<!--                    <input type="text" required name="carname" placeholder="Car Name">-->
+<!--                    </div>    -->
+<!--                    <div class="row list-unstyled search-box__main clearfix search-list" style="margin-top: -20px;">-->
+<!--                    <div class="search-box__input">-->
+<!--                            <input type="text" required class="selectpicker" id="search-input" name="carname" placeholder="Car Name">-->
+<!--                        </div>-->
+<!--                        <div class="search-box__input" style="width: 200px;">-->
+<!--                         <select class="selectpicker" required name="seat" aria-label="Default select example">-->
+<!--                             <option selected>Number of Seats</option>-->
+<!--                             <option value="3">3</option>-->
+<!--                             <option value="5">5</option>-->
+<!--                         </select>-->
+<!--                         </div>-->
+<!--                    </div>-->
 
 
-        <!--Premium Ride Start-->
-        <section class="premium-ride">
-            <div class="container">
-                <div class="section-title text-center">
-                    <span class="section-title__tagline"></span>
-                </div>
-                <div class="row">
-                    <div class="col-xl-12">
 
-    </div><!-- /.page-wrapper -->
+<!--                    <div class="row  search-box__main " style="margin-top: -20px;">-->
+<!--                        <div class="search-box__input">-->
+<!--                            <input type="text" required class="selectpicker" id="search-input" name="color" placeholder="Car Color">-->
+<!--                        </div>-->
+
+<!--                        <div class="search-box__input">-->
+<!--                            <input type="text" required name="carno" style="width:255px;" placeholder="Car Number" id="">-->
+
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="row search-box__main" style="margin-top: -20px;">-->
+<!--                        <div class="search-box__input">-->
+<!--                            <input type="file" name="image" required class="selectpicker" id="search-input"  style="background-color: white;width: 255px;height: 70px;padding: 20px;border-radius:5px;" placeholder="Car Image">-->
+<!--                        </div>-->
+<!--                        <div class="search-box__input">-->
+<!--                                <label class="radio-container" style="color:black;margin-left:20px;margin-top:20px;">AC-->
+<!--                                    <input type="radio" required  value="ac" name="acnonac">-->
+<!--                                    <span class="checkmark"></span>-->
+<!--                                </label>-->
+<!--                                <label class="radio-container" style="color:black;margin-left:20px;">Non AC-->
+<!--                                    <input type="radio" required value="non_ac" name="acnonac">-->
+<!--                                    <span class="checkmark"></span>-->
+<!--                                </label>-->
+<!--                            </div>-->
+<!--                    </div>-->
+
+<!--                    <div class="row">-->
+<!--                        <div class="">-->
+<!--                            <button type="submit" class="btn btn-success" style="background-color: green;width:140px;height:50px;">Submit</button>-->
+<!--                        </div>-->
+<!--                    </div><br>-->
+<!--                </form><br>-->
+<!--            </div><br>-->
+<!--        </section>-->
+
+
+    </div>
 
 
     <div class="mobile-nav__wrapper">
@@ -223,15 +272,11 @@
                     <a href="#" class="fab fa-facebook-square"></a>
                     <a href="#" class="fab fa-pinterest-p"></a>
                     <a href="#" class="fab fa-instagram"></a>
-                </div><!-- /.mobile-nav__social -->
-            </div><!-- /.mobile-nav__top -->
-
-
+                </div>
+            </div>
 
         </div>
-        <!-- /.mobile-nav__content -->
     </div>
-    <!-- /.mobile-nav__wrapper -->
 
     <div class="search-popup">
         <div class="search-popup__overlay search-toggler"></div>
@@ -245,9 +290,7 @@
                 </button>
             </form>
         </div>
-        <!-- /.search-popup__content -->
     </div>
-    <!-- /.search-popup -->
 
     <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
 

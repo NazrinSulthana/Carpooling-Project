@@ -45,6 +45,7 @@
     <link rel="stylesheet" href="{% static 'assets/vendors/timepicker/timePicker.css' %}" />
 
     <!-- template styles -->
+    <link rel="stylesheet" href="{% static 'assets/css/new.css' %}" />
     <link rel="stylesheet" href="{% static 'assets/css/entox.css' %}" />
     <link rel="stylesheet" href="{% static 'assets/css/entox-responsive.css' %}" />
     <link rel="stylesheet" href="{% static 'assets/css/style.css' %}" />
@@ -55,59 +56,48 @@
 </head>
 
 <body>
+{% if message %}
+    <script>
+    alert("{{ message }}")
+    </script>
+    {% endif %}
     <div class="preloader">
         <img class="preloader__image" width="60" src="assets/images/loader.png" alt="" />
     </div>
     <!-- /.preloader -->
-    <div class="page-wrapper">
-        <header class="main-header clearfix">
+       <div class="page-wrapper">
+        <header class="main-header clearfix" style="background-color:#000;height:100px;">
 
             <nav class="main-menu clearfix">
                 <div class="main-menu-wrapper clearfix">
                     <div class="main-menu-wrapper__left clearfix">
+                        <div class="main-menu-wrapper__logo">
+                          <h1 style="color:white;"><span style="color:red;">CAR</span>PooL</h1>
 
+                        </div>
                         <div class="main-menu-wrapper__main-menu">
                             <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
-                            <ul class="main-menu__list">
-                                <li class="dropdown current">
-                                    <a href="/owner">Home</a>
+                            <ul class="main-menu__list" style="margin-left:00px;">
+
+                                <li class="dropdown">
+                                    <a href="/owner" class="">Previous</a>
+
+                                </li>
+                                <li class="dropdown">
+                                    <a href="comp_reply" class="">Reply</a>
 
                                 </li>
 
-<!--                                <li class="dropdown">-->
-<!--                                    <a href="help.html">Help</a>-->
 
-<!--                                </li>-->
-
-<!--                                <li><a href="contact.html">Contact</a></li>-->
                             </ul>
-
                         </div>
                     </div>
+
                 </div>
             </nav>
         </header>
 
-        <div class="stricky-header stricked-menu main-menu">
-            <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
-        </div><!-- /.stricky-header -->
-
-        <!-- Banner One Start -->
-        <section class="main-slider">
-            <div class="swiper-container thm-swiper__slider" data-swiper-options='{"slidesPerView": 1, "loop": true,
-    "effect": "fade",
-     "pagination": {
-        "el": "#main-slider-pagination",
-        "type": "bullets",
-        "clickable": true
-      },
-    "navigation": {
-        "nextEl": "#main-slider__swiper-button-next",
-        "prevEl": "#main-slider__swiper-button-prev"
-    },
-    "autoplay": {
-        "delay": 5000
-    }}'>
+        <section class="" style="margin-top:-30px;height:700px;">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="image-layer"
@@ -116,7 +106,7 @@
 
                         <div class="image-layer-overlay"></div>
                         <!-- /.image-layer -->
-                        <div class="container" style="background-color: steelblue;">
+                        <div class="container" style="background-color: ;margin-top:250px;">
                             <div class="row">
                                 <div class="col-lg-12 text-center position-absolute main-title">
                                     <div class="main-slider__content">
@@ -125,21 +115,16 @@
                                 </div>
                             </div>
                             {% if user.is_authenticated %}
-                            <p style="text-align: center;font-size:40px;margin-top:-50px;" >Report your Complaint</p><br>
-                            <form action="" method="post" class="dropdown" style="margin-left:40px;">
+                            <p style="text-align: center;font-size:40px;margin-top:-50px;color:black;" >Report your Complaint</p>
+                            <form action="" method="post" class="dropdown" style="display:flex;justify-content:center;align-items:center;flex-direction: column;margin:50px;">
 							{% csrf_token %}
-                                <div class="form-group">
-                                    <input type="text" name="feedback" style="width:500px;height:200px; background-color:white;color:black;" placeholder="enter the text" class="form-control"><br><br>
+                                    <input type="text" name="feedback" style="width:500px;height:200px; background-color:white;color:black;border:2px solid black;" placeholder="     Type your Complaint here..." class="form-control"><br>
 
-                                    <div class="comment-form">
-                                        <div class="send-button text-uppercase" style="margin-top:-40px;">
-                                            <button type="submit" value="Submit">Send Complaint</button>
-                                        </div>
-                                        {% endif %}
-                                    </div>
-                                </div>
+
+                                    <button type="submit" value="Submit" class="btn-primary" style="width: 131px;height: 40px;border-radius: 5px;border: none;">Send Feedback</button>
+
                             </form>
-
+                            {% endif %}
 
                         </div>
                     </div>

@@ -1,55 +1,106 @@
-<!DOCTYPE html>
 <html lang="en">
+{% load static %}
 
+
+<!-- Mirrored from layerdrops.com/entox/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 14 Sep 2021 06:49:16 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 <head>
-    <!-- Required meta tags-->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Colorlib Templates">
-    <meta name="author" content="Colorlib">
-    <meta name="keywords" content="Colorlib Templates">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carpooling</title>
+    <!-- favicons Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png" />
+    <link rel="manifest" href="{% static 'assets/images/favicons/site.webmanifest' %}" />
+    <meta name="description" content="" />
 
-    <!-- Title Page-->
-    <title>Login</title>
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com/">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap"
+        rel="stylesheet">
 
-    <!-- Icons font CSS-->
-    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
-    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
-    <!-- Font special for pages-->
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <!-- Vendor CSS-->
-    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
-    <link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
 
-    <!-- Main CSS-->
-    {% load static %}
+    <link rel="stylesheet" href="{% static 'assets/vendors/bootstrap/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/animate/animate.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/fontawesome/css/all.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/jarallax/jarallax.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/nouislider/nouislider.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/nouislider/nouislider.pips.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/odometer/odometer.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/swiper/swiper.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/entox-icons/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendors/tiny-slider/tiny-slider.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/reey-font/stylesheet.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/owl-carousel/owl.carousel.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/owl-carousel/owl.theme.default.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/twentytwenty/twentytwenty.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/bxslider/jquery.bxslider.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/bootstrap-select/css/bootstrap-select.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/vegas/vegas.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/jquery-ui/jquery-ui.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/timepicker/timePicker.css' %}" />
+
+    <!-- template styles -->
+    <link rel="stylesheet" href="{% static 'assets/css/entox.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/entox-responsive.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/new.css' %}"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIge8SKUYjjhEEzG2yEtvgm4aG9a9aK50&libraries=places&callback=initMap">
+</script>
     <link href="{% static 'assets/css/main.css' %}" rel="stylesheet" media="all">
     <link href="{% static 'assets/css/new.css' %}" rel="stylesheet" media="all">
 </head>
 
 <body>
-    <header class="main-header clearfix" style="background-color:#000;">
 
-            <nav class="">
-                <div class="">
-                    <ul style="height: 70px;background-color: white;list-style-type: none; overflow: hidden;">
-                        <li class="active" style="width: 70px;height: 40px;float: right;margin-right: 100px; "><a href="/" style="display: block;padding: 8px;background-color: green;color:white;margin-top: 15px;text-decoration: none;"> HOME </a></li>
-<!--                        <li style="width: 180px;height: 40px;float: right;margin-right: 30px; "><a href="" style="display: block;padding: 8px;background-color: cadetblue;color:white;margin-top: 15px;text-decoration: none;"> OWNER REGISTRATION </a></li>-->
-                    </ul>
+    <header class="main-header clearfix" style="background-color:#000;height:120px;">
+
+            <nav class="main-menu clearfix">
+                <div class="main-menu-wrapper clearfix">
+                    <div class="main-menu-wrapper__left clearfix">
+                        <div class="main-menu-wrapper__logo">
+                            <h1 style="color:white;"><span style="color:red;">CAR</span>PooL</h1>
+                        </div>
+                        <div class="main-menu-wrapper__right " style="float:right;">
+                            <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+                            <ul class="main-menu__list" style="float:right;display: flex;
+    justify-content: center;
+
+    margin-left: 800px;">
+
+                                 <li class="dropdown" style="margin-top:-20px;">
+                                    <a href="/" style="">HOME</a>
+                                </li>
+
+                            </ul>
+                            <div class="main-menu-wrapper__right">
+
+
+                    </div>
+
+                        </div>
+                    </div>
+
                 </div>
             </nav>
         </header>
-    <div class="page-wrapper p-t-130 p-b-100 font-poppins" style="min-height: 0;height: 330px;">
         <div class="wrapper wrapper--w680">
             <div class="card card-4 " style="margin-top: 230px;">
-                <div class="card-body" style="background-color: white;height:280px;">
-                    <h2 class="title">Login</h2>
+                <div class="card-body" style="background-color: white;height:345px;margin-top: -10px;border: 2px;
+    border-style: ridge;">
+                    <h2 class="title" style="margin-top: -20px;display: flex;
+    justify-content: center;
+    align-items: center;">FORGOT PASSWORD</h2>
                     <form method="post" >
                         {% csrf_token %}
-                        <div class="row row-space">
+                        <div class="row row-space" style="margin-top:50px;">
                             <div class="col-2">
-                                <div class="input-group ">
+                                <div class="input-group">
 <!--                                    <label class="label">Username</label>-->
                                     <input class="input--style-4 border border-secondary"  placeholder="Username"  type="text" name="username">
                                 </div>

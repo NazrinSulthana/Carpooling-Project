@@ -60,53 +60,65 @@
     </div>
     <!-- /.preloader -->
     <div class="page-wrapper">
-        <header class="main-header clearfix">
-            
+        <header class="main-header clearfix" style="background-color:#000;height:100px;">
+
             <nav class="main-menu clearfix">
                 <div class="main-menu-wrapper clearfix">
                     <div class="main-menu-wrapper__left clearfix">
                         <div class="main-menu-wrapper__logo">
-                            <a href="/"><img src="assets/images/resources/logo-1.png" alt=""></a>
+                          <h1 style="color:white;"><span style="color:red;">CAR</span>PooL</h1>
+
                         </div>
                         <div class="main-menu-wrapper__main-menu">
                             <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
-                            <ul class="main-menu__list">
+                            <ul class="main-menu__list" style="margin-left:00px;">
                                 <li class="dropdown current">
-                                    <a href="/" class="color-black">Home</a>
+                                    <a href="/owner" class="">Home</a>
+                                    <ul>
 
+                                    </ul>
                                 </li>
                                 <li class="dropdown">
-                                    <a href="cardetails" class="color-black">Add car Details</a>
+                                    <a href="cardetails" class="">Add car Details</a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="riderequest" class="">My Requests</a>
                                 </li>
 
                                 <li class="dropdown">
-                                    <a href="feedbackto" class="color-black">Complaint</a>
+                                    <a href="feedbackto" class="">Complaint</a>
 
                                 </li>
 
                                 <li class="dropdown">
-                                    <a href="" class="color-black">Payment</a>
+                                    <a href="payment" class="">Payment</a>
                                 </li>
                                 <li class="dropdown">
-                                    <a href="logout/" class="color-black">Logout</a>
+                                    <a href="profile" class="">My Profile</a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="logout/" class="">Logout</a>
 
                                 </li>
 
                             </ul>
                         </div>
                     </div>
-                    <div class="main-menu-wrapper__right">
+<!--                    <div class="main-menu-wrapper__right">-->
 
-                        <div class="main-menu-wrapper__btn-box">
-                            <a href="profile" class="btn btn-primary" style="background-color: black">My Profile <i class="bi bi-plus-square"></i></a>
-                        </div>
-                    </div>
+<!--                        <div class="main-menu-wrapper__btn-box">-->
+<!--                            <a href="profile" class="btn btn-primary" style="background-color: ">My Profile <i class="bi bi-plus-square"></i></a>-->
+<!--                        </div>-->
+<!--                    </div>-->
                 </div>
             </nav>
         </header>
-        <section class="container">
-            <img src="{% static 'assets/images/login.jpeg' %}" alt="snow"style="margin-left: -90px";>
-                    <div class="centered"style="font-family: 'Times New Roman';color: black;font-size: xx-large;">“It's not the destination,it's the journey.” ...</div>
+        <section class="container-fluid">
+            <img src="{% static 'assets/images/new2.png' %}" alt="snow" style="width: inherit;
+    height: auto;">
+                    <div class="centered" style="font-family: 'Times New Roman';color: black;font-size: 35px;
+    margin-top: 200px;
+    font-weight: bold;">“It's not the destination,it's the journey.” ...</div>
 
                         <div class="container" style="background-image:url(../images/ownerindex.jpg);">
 
@@ -241,6 +253,11 @@ var searchBox = new google.maps.places.SearchBox(input, {
 });
 
     </script>
+
+<script>
+alert("{{ "welcome to Owner  page" }}")
+</script>
+
 </body>
 
 

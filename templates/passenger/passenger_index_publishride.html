@@ -59,45 +59,34 @@
         <img class="preloader__image" width="60" src="assets/images/loader.png" alt="" />
     </div>
     <!-- /.preloader -->
-    <div class="page-wrapper">
-        <header class="main-header clearfix">
-            
+    <div class="admin-wrapper">
+        <header class="main-header clearfix" style="background-color:#000;height:100px;">
+
             <nav class="main-menu clearfix">
                 <div class="main-menu-wrapper clearfix">
                     <div class="main-menu-wrapper__left clearfix">
                         <div class="main-menu-wrapper__logo">
-                            <a href="index-2.html"><img src="assets/images/resources/logo-1.png" alt=""></a>
+                          <h1 style="color:white;"><span style="color:red;">CAR</span>PooL</h1>
+
                         </div>
                         <div class="main-menu-wrapper__main-menu">
                             <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
-                            <ul class="main-menu__list">
+                            <ul class="main-menu__list" style="margin-left:00px;">
                                 <li class="dropdown current">
-                                    <a href="/">Home</a>
+                                    <a href="/passenger" class="">Home</a>
+                                    <ul>
+
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="listofride">Seek your Ride</a>
 
                                 </li>
-                                <!-- <li class="dropdown">
-                                    <a href="#">Rent a Car</a>
-                                    <ul>
-                                        <li><a href="listings.html">Listings</a></li>
-                                        <li><a href="listings-details.html">Listings Details</a></li>
-                                    </ul>
-                                </li> -->
                                 <li class="dropdown">
                                     <a href="feedbackpass">Complaint</a>
-<!--                                    <ul>-->
-<!--                                        <li><a href="help.html">About</a></li>-->
-<!--                                        <li><a href="how-it-works.html">How It Works</a></li>-->
-<!--                                        <li><a href="">404</a></li>-->
-<!--                                    </ul>-->
+
                                 </li>
-                                <!-- <li class="dropdown">
-                                    <a href="#">News</a>
-                                    <ul>
-                                        <li><a href="news.html">News</a></li>
-                                        <li><a href="news-details.html">News Details</a></li>
-                                    </ul>
-                                </li> -->
-                                <li><a href="payment">Payment</a></li>
+
                                 <li><a href="profile">Profile</a></li>
                                 <li class="dropdown">
                                     <a href="logout/">Logout</a>
@@ -108,51 +97,27 @@
                     </div>
                     <div class="main-menu-wrapper__right">
 
-                        <div class="emergency-btn" style="">
-                            <a href="emergency" class="thm-btn-emergency btn btn-primary main-menu-wrapper__btn" style="width:100px;height:50px;"><p></p>Emergency <i class="bi bi-plus-square"></i></a>
-                        </div>
                     </div>
                 </div>
             </nav>
         </header>
 
-        <div class="stricky-header stricked-menu main-menu main-menu-two">
-            <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
-        </div><!-- /.stricky-header -->
-
         <!-- Banner Two Start -->
-        <section class="admin-wrapper" style="background-image:url(../images/team.jpg);">
-            <div class="banner-bg-slide-overly"></div>
+        <section class="pass-wrapper">
+            <div class="banner-bg-slide-overly" style="position:fixed;"></div>
             <div class="container">
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="banner-two__content" style="margin-top:200px;">
                             
-                            <h2 class="banner-two__title" style="text-align: center;">Seek Your Ride</h2><br>
-                            <form class="banner-two-form" method="post" action="">
-                                {% csrf_token %}
-                                <ul class="list-unstyled banner-two__type-boxes clearfix" style="margin-left: 160px;">
-                                    <li class="banner-two__input-box" style="text-align: center;">
-                                        <li class="search-box__input">
-                                            <input type="text" class="selectpicker" id="search-input" name="leavingfrom" placeholder="Where are you leaving from?">
-                                        </li>
-                                    </li>
-                                    <li class="banner-two__input-box">
-                                        <li class="search-box__input">
-                                            <input type="text" class="selectpicker" id="search-input" name="leavingto" placeholder="Where are you heading?">
-                                        </li>
-                                    </li>
-                                    <li class="banner-two__input-box">
-                                        <button type="submit" class="banner-two__btn"><a href="listofride" style="color:white;"> Seek Ride</a></button>
-                                    </li>
-                                </ul>
-                            </form>
+                            <a href="listofride"><h2 class="banner-two__title" style="text-align: center;margin-top:200px;font-family: italic;">Seek Your Ride</h2></a><br>
+
 
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+
         </section>
         <section class="rules">
             <div class="rules-bg jarallax" data-jarallax data-speed="0.2" data-imgPosition="50% 0%"
@@ -219,7 +184,11 @@
         <!-- /.search-popup__content -->
     </div>
     <!-- /.search-popup -->
-
+{% if message %}
+    <script>
+    alert("{{ message }}")
+    </script>
+    {% endif %}
     <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
 
 
@@ -255,6 +224,10 @@
     <!-- template js -->
     <script src="{% static 'assets/js/entox.js' %}"></script>
     <script src="{% static 'assets/js/index.js' %}"></script>
+
+<script>
+alert("{{ "welcome to passenger  page" }}")
+</script>
 
 </body>
 

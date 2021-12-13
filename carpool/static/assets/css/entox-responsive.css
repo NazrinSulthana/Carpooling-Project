@@ -113,7 +113,7 @@
 }
 .search-box__input {
     max-width: 405px;
-    float: none;
+
 }
 .search-box .form-select {
     width: 405px !important;
@@ -331,7 +331,6 @@
 }
 .search-box__input {
     max-width: 303px;
-    float: none;
 }
 .search-box .form-select {
     width: 303px !important;
@@ -665,7 +664,7 @@
 }    
 .search-box__input {
     margin-right: 0;
-    float: none;
+
 }    
 .search-box__container {
     max-width: 540px;

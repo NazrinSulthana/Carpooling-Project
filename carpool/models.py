@@ -26,24 +26,41 @@ class PassengerEntry(models.Model):
     image = models.ImageField(upload_to='images/', null=True)
 
 
-class Offerride(models.Model):
-    owner = models.ForeignKey(OwnerEntry, on_delete=models.CASCADE)
-    startlocation = models.CharField(max_length=100)
-    endlocation = models.CharField(max_length=100)
-    date = models.DateField(blank=True, null=True)
-    time = models.TimeField()
-
 class CarDetails(models.Model):
     owner = models.ForeignKey(OwnerEntry, on_delete=models.CASCADE)
     carname = models.CharField(max_length=100)
     seat = models.CharField(max_length=50)
     color = models.CharField(max_length=100)
     carno = models.CharField(max_length=100)
+    acnonac = models.CharField(max_length=50, default='ac')
+    image = models.ImageField(upload_to='images/', null=True)
+
+
+
+class Offerride(models.Model):
+    owner = models.ForeignKey(OwnerEntry, on_delete=models.CASCADE)
+    passenger = models.ForeignKey(PassengerEntry, on_delete=models.CASCADE, blank=True, null=True)
+    cardetails = models.ForeignKey(CarDetails, on_delete=models.CASCADE, blank=True, null=True)
+    startlocation = models.CharField(max_length=100)
+    endlocation = models.CharField(max_length=100)
+    date = models.DateField(blank=True, null=True)
+    time = models.TimeField()
+    status = models.CharField(max_length=500, default='0')
+    amount = models.IntegerField(max_length=100, default=100)
+    laggage = models.CharField(max_length=100, default=10)
+    smoking = models.CharField(max_length=100,default='yes')
+    pets = models.CharField(max_length=100, default='yes')
+    music = models.CharField(max_length=100, default='yes')
+    food = models.CharField(max_length=100, default='yes')
+    carnames = models.CharField(max_length=100, null=True, blank=True)
+    seatno = models.IntegerField(null=True, blank=True)
+    later = models.CharField(max_length=100, default='0')
+
 
 class SeekRide(models.Model):
     passenger = models.ForeignKey(PassengerEntry, on_delete=models.CASCADE)
-    leavingfrom = models.CharField(max_length=200)
-    leavingto = models.CharField(max_length=200)
+    offerride = models.ForeignKey(Offerride, on_delete=models.CASCADE, null=True, blank=True)
+
 
 
 class Feedback_Owner(models.Model):
@@ -57,12 +74,15 @@ class Feedback_Owner(models.Model):
 
 class Feedback_Passenger(models.Model):
     passenger = models.ForeignKey(PassengerEntry, on_delete=models.CASCADE,blank=True, null=True)
+    owner = models.ForeignKey(OwnerEntry, on_delete=models.CASCADE, blank=True, null=True)
     user = models.ForeignKey(UserType, on_delete=models.CASCADE,blank=True, null=True)
     time = models.TimeField(auto_now=True)
     date = models.DateField(auto_now=True)
     reply = models.CharField(max_length=1000)
     status = models.CharField(max_length=500)
     feedback = models.CharField(max_length=1000)
+    ownername = models.CharField(max_length=100, default='0')
+    total = models.IntegerField(default='0')
 
 class Comments(models.Model):
     owner = models.ForeignKey(OwnerEntry, on_delete=models.CASCADE)
@@ -89,3 +109,17 @@ class Payment(models.Model):
     amount = models.CharField(max_length=100)
     time = models.TimeField(auto_now=True)
     date = models.DateTimeField(auto_now=True)
+    status = models.CharField(max_length=100, default='0')
+
+class Rate(models.Model):
+    passenger = models.ForeignKey(PassengerEntry, on_delete=models.CASCADE)
+    owner = models.ForeignKey(OwnerEntry, on_delete=models.CASCADE, blank=True,null=True)
+    rating = models.CharField(max_length=100)
+    review = models.CharField(max_length=1000)
+    status = models.IntegerField(default='0')
+
+class Report_Issue(models.Model):
+    passenger = models.ForeignKey(PassengerEntry, on_delete=models.CASCADE)
+    owner = models.ForeignKey(OwnerEntry, on_delete=models.CASCADE)
+    status = models.CharField(max_length=500, default='0')
+    complaint = models.CharField(max_length=200)
